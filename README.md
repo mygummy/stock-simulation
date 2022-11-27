@@ -1,6 +1,4 @@
 # stock-simulation
 ossp final project
 
-hihi
-
-hello world!
+test
