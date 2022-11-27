@@ -1,4 +1,15 @@
 # stock-simulation
 ossp final project
 
-test
+게임화면 구현상황
+
+해결한 것
+- stock-table 행 클릭 시 해당 차트를 화면에 표시
+- 시간이 흐르면서 주가가 변동되게 함
+
+해결해야할 것
+- 현재 시간 수정
+- 차트 위 정보 표시
+- 매수 / 매도 기능 구현
+- 매수: user-table에 해당 주식 추가
+- 매도: 해당 주식을 다 매도했을 경우 user-table에서 목록 삭제
