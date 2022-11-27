@@ -3,6 +3,9 @@ ossp final project
 
 게임화면 구현상황
 
+npm install jquery --save
+npm install apexcharts --save
+
 해결한 것
 - stock-table 행 클릭 시 해당 차트를 화면에 표시
 - 시간이 흐르면서 주가가 변동되게 함
