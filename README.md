@@ -4,6 +4,7 @@ ossp final project
 게임화면 구현상황
 
 npm install jquery --save
+
 npm install apexcharts --save
 
 해결한 것
