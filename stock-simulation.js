@@ -1,6 +1,8 @@
+// 현재 선택중인 주식(name은 주식 이름, chart는 주식 옵션 index)
 let current_stock_name = "OO전자"
 let current_stock_chart = 0
 
+// 주식 목록
 let firststock = {
 	name: "OO전자",
 	opening: 60000,
@@ -17,8 +19,10 @@ let secondstock = {
 	unit: 100,
 }
 
+// 주식 리스트
 let stocklist = [firststock, secondstock]
 
+// 주식 차트 옵션(data, 기본 설정 등이 담겨 있음)
 let options1 = {
     series: [{
     	data: [
@@ -341,8 +345,12 @@ let options2 = {
   	}
 };
 
+// 주식 차트 옵션 리스트
 let chartoption = [options1, options2]
 let chart = new ApexCharts(document.querySelector(".chartdiv-chart"), options1);
+
+// 유저가 보유하고 있는 리스트
+let userstock = []
 
 // 표의 종목을 클릭했을 때 해당 차트를 화면에 띄우게 함
 function showChart(option) {
@@ -350,6 +358,8 @@ function showChart(option) {
 	current = stocklist[current_stock_chart].current;
 	fluctuation = stocklist[current_stock_chart].current - stocklist[current_stock_chart].opening;
 	fluctuation_rate = (fluctuation / current * 100).toFixed(2);
+
+	// 차트 정보 칸
 	$("#chartdiv-stock-name").text(current_stock_name);
 	$("#chartdiv-stock-price").text(current);
 	$("#chartdiv-stock-fluctuation").text(fluctuation);
@@ -370,6 +380,9 @@ function showChart(option) {
 	chart.destroy();
 	chart = new ApexCharts(document.querySelector(".chartdiv-chart"), chartoption[option]);
 	chart.render();
+
+	// 수량 조정 칸
+	$("#middledowndiv-stock-name").text(current_stock_name);
 }
 
 $(document).ready(function() {
@@ -424,6 +437,24 @@ $(".stock").on("click", function() {
 	current_stock_name = name;
 	current_stock_chart = chart;
 
+	// 수량을 0으로 해야함
+	$("#quantity").text(0);
 	showChart(current_stock_chart);
 });
 
+$(".minus").on("click", function() {
+	let num = Number($("#quantity").val());
+
+	if(num > 0) num -= 1;
+	$("#quantity").val(num);
+
+});
+
+$(".plus").on("click", function() {
+	let num = Number($("#quantity").val());
+	num += 1;
+
+	// 최대 예수금까지 수량 늘리기 가능, 주가 떨어졌을때 수량 조정
+	$("#quantity").val(num);
+
+});
