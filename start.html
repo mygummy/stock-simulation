@@ -58,9 +58,23 @@
             localStorage.setItem('user-name',text);
 
 			if (!text.length) return;
-
 		});
         </script>
 
+        <script>
+            function enterkey() {
+			    if (window.event.keyCode == 13) {
+                    let input = document.querySelector("#name");
+			        let text = input.value;
+                    text=text+"님의 모의투자"
+                    localStorage.setItem('user-name',text);
+                    
+                    location.href='stock-simulation.html'
+
+			        if (!text.length) return;
+    		    }
+		}
+        </script>
+        
     </body>
 </html>
