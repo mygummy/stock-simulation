@@ -39,7 +39,7 @@
 
         <div class="usernamediv">
           <div class="usernamediv-item">
-            <span>OOO님의 모의투자</span>
+              <div id="name-of-user">OOO님의 모의투자</div>
           </div>
         </div>
 
@@ -132,4 +132,10 @@
   <script src="node_modules/apexcharts/dist/apexcharts.min.js" type="text/javascript"></script>
   <script src="node_modules/jquery/dist/jquery.min.js" type="text/javascript"></script>
   <script src="stock-simulation.js" type="text/javascript"></script>
+  <script>
+    if(localStorage.getItem('user-name')){
+      let lastData = localStorage.getItem('user-name')
+      document.getElementById("name-of-user").innerHTML = lastData;
+    }
+   </script>
 </html>
