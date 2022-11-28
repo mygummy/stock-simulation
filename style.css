@@ -55,11 +55,37 @@ body {
 }
 
 .chartdiv-info {
+  display: flex;
   background-color: rgb(169,209,142);
   height: 60px;
   border-bottom: 3px solid rgb(84,130,53);
   line-height: 60px;
-  font-size: 25px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.chartdiv-info-1 {
+  width: 180px;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.chartdiv-info-2 {
+  width: 130px;
+  text-align: right;
+  padding-right: 20px;
+}
+
+.chartdiv-info-3 {
+  width: 130px;
+  text-align: right;
+  padding-right: 20px;
+}
+
+.chartdiv-info-4 {
+  width: 120px;
+  text-align: right;
+  padding-right: 40px;
 }
 
 .chartdiv-chart {
@@ -83,7 +109,7 @@ body {
   background-color: white;
   border: 1px solid rgb(84,130,53);
   box-shadow: 3px 3px gray;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 #stock-table {
@@ -99,6 +125,14 @@ body {
 
 #stock-table thead th:nth-child(1) {
   width: 40%;
+}
+
+#stock-table thead th:nth-child(2) {
+  width: 30%;
+}
+
+#stock-table thead th:nth-child(3) {
+  width: 30%;
 }
 
 #stock-table tbody td {
@@ -123,7 +157,7 @@ body {
   background-color: white;
   border: 1px solid rgb(84,130,53);
   box-shadow: 3px 3px gray;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 #user-table {
@@ -135,6 +169,22 @@ body {
   height: 60px;
   background-color: rgb(169,209,142);
   border: 1px solid rgb(84,130,53);
+}
+
+#user-table thead th:nth-child(1) {
+  width: 40%;
+}
+
+#user-table thead th:nth-child(2) {
+  width: 24%;
+}
+
+#user-table thead th:nth-child(3) {
+  width: 12%;
+}
+
+#user-table thead th:nth-child(4) {
+  width: 24%;
 }
 
 #user-table tbody td {
@@ -167,7 +217,6 @@ body {
 
 .middledonwdiv-item-1 {
   width: 120px;
-  text-align: center;
 }
 
 .middledonwdiv-item-2 {
@@ -203,12 +252,14 @@ body {
 }
 
 .buy {
-  background-color: green;
+  background-color: rgb(41,167,116);
+  border: 1px solid rgb(31,127,88);
   color: white;
 }
 
 .sell {
-  background-color: red;
+  background-color: rgb(206,58,58);
+  border: 1px solid rgb(166,42,42);
   color: white;
 }
 

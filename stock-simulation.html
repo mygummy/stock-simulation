@@ -13,17 +13,25 @@
       <div class="grid">
         <div class="timediv">
           <div class="timediv-item">
-            <span>현재 시간 - 09:00</span>
+            현재 시간 - <span id="currenttime">09:00</span>
           </div>
         </div>
 
         <div class="chartdiv">
           <div class="chartdiv-item">
             <div class="chartdiv-info">
-              <span id="chartdiv-stock-name">TT항공</span>
-              <span id="chartdiv-stock-price">29800</span>
-              <span id="chartdiv-stock-fluctuation">1950</span>
-              <span id="chartdiv-stock-fluctuationrate">6.54%</span>
+              <div class="chartdiv-info-1">
+                <span id="chartdiv-stock-name">OO전자</span>
+              </div>
+              <div class="chartdiv-info-2">
+                <span id="chartdiv-stock-price">60000</span>
+              </div>
+              <div class="chartdiv-info-3">
+                <span id="chartdiv-stock-fluctuation">0</span>
+              </div>
+              <div class="chartdiv-info-4">
+                <span id="chartdiv-stock-fluctuationrate">0.00%</span>
+              </div>
             </div>
             <div class="chartdiv-chart"></div>
           </div>
@@ -48,13 +56,13 @@
               <tbody>
                 <tr id="stock1" name="OO전자" chart="0" class="stock">
                   <td>OO전자</td>
-                  <td>59400</td>
-                  <td>200</td>
+                  <td id="stock1-current">60000</td>
+                  <td id="stock1-fluctuation">0</td>
                 </tr>
                 <tr id="stock2" name="TT항공" chart="1" class="stock">
                   <td>TT항공</td>
-                  <td>29800</td>
-                  <td>1950</td>
+                  <td id="stock2-current">20000</td>
+                  <td id="stock2-fluctuation">0</td>
                 </tr>
               </tbody>
             </table>
