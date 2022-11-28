@@ -350,7 +350,7 @@ let chartoption = [options1, options2]
 let chart = new ApexCharts(document.querySelector(".chartdiv-chart"), options1);
 
 // 유저가 보유하고 있는 리스트
-let userstock = []
+let userstock = [];
 
 // 표의 종목을 클릭했을 때 해당 차트를 화면에 띄우게 함
 function showChart(option) {
@@ -384,6 +384,21 @@ function showChart(option) {
 	// 수량 조정 칸
 	$("#middledowndiv-stock-name").text(current_stock_name);
 }
+
+
+// user-table에서 해당 주식이 있는지, 있으면 몇번째에 있는지 찾아줌
+function findIndex(name) {
+	let len = userstock.length;
+	let index = -1;
+	for(let i = 0; i < len; i++) {
+		if(userstock[i].name == name) {
+			index = i;
+			break;
+		}
+	}
+	return index;
+}
+
 
 $(document).ready(function() {
 	chart.render();
@@ -430,7 +445,7 @@ $(document).ready(function() {
 });
 
 
-
+// stock-table 행 클릭시
 $(".stock").on("click", function() {
 	let name = $(this).attr("name");
 	let chart = $(this).attr("chart");
@@ -438,13 +453,26 @@ $(".stock").on("click", function() {
 	current_stock_chart = chart;
 
 	// 수량을 0으로 해야함
-	$("#quantity").text(0);
+	$("#quantity").val(0);
 	showChart(current_stock_chart);
 });
 
+// user-table 행 클릭시(행이 동적 할당되기 때문에 따로 함수를 만듬)
+$("#user-table-body").on("click", ".stock", function() {
+	let name = $(this).attr("name");
+	let chart = $(this).attr("chart");
+	current_stock_name = name;
+	current_stock_chart = chart;
+
+	// 수량을 0으로 해야함
+	$("#quantity").val(0);
+	showChart(current_stock_chart);
+})
+
+
 $(".minus").on("click", function() {
 	let num = Number($("#quantity").val());
-
+	if(isNaN(num)) num = 0;
 	if(num > 0) num -= 1;
 	$("#quantity").val(num);
 
@@ -452,9 +480,44 @@ $(".minus").on("click", function() {
 
 $(".plus").on("click", function() {
 	let num = Number($("#quantity").val());
+	if(isNaN(num)) num = 0;
 	num += 1;
-
 	// 최대 예수금까지 수량 늘리기 가능, 주가 떨어졌을때 수량 조정
 	$("#quantity").val(num);
-
 });
+
+$(".buy").on("click", function() {
+	let num = Number($("#quantity").val());
+
+	if(num == 0) return;
+	let purchase = stocklist[current_stock_chart].current;
+	let index = findIndex(current_stock_name);
+	
+	// 매수한 주식 종목이 없을 경우
+	if(index == -1) {
+		let purchase_stock = {
+			name: current_stock_name,
+			totalpurchase: purchase * num,
+			num: num,
+			chart: current_stock_chart,
+		}
+		userstock.push(purchase_stock);
+
+		$("#user-table > tbody:last").append("<tr class=\"stock\" name=" + current_stock_name + " chart=" + current_stock_chart + "><td>" + current_stock_name + "</td><td>" + 0 + "</td><td>" + num + "</td><td>" + purchase + "</td></tr>");
+
+	} else {
+		userstock[index].totalpurchase += purchase * num;
+		userstock[index].num += num;
+	}
+
+	// 예수금 차감
+	let depositreceived = Number($("#depositreceived").text());
+	depositreceived -= purchase * num;
+	$("#depositreceived").text(depositreceived);
+});
+
+$(".sell").on("click", function() {
+	console.log(userstock);
+	console.log($("#user-table > tbody > tr").length);
+})
+
