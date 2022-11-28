@@ -35,16 +35,31 @@
                 </div>
             </div>
             <div class="box pt-5" style="height: 30px; margin:0 auto">
-                <div class="rounded-2" id="box" style="color: black; background-color: white; border: 20px; padding: 5px; width: 100px; height: 30px;">
+                <div id="box" style="color: black; background-color: white; border: 20px; padding: 5px; width: 100px; height: 30px;">
                     <h6>NAME</h6>
                 </div>
                 <div class="ms-1" style="width: 100px">
-                    <input type="text" class="rounded-2" style="background-color: white; border-left:white; border-right:white; border-top:white;border-bottom:skyblue 2px solid" onkeyup="enterkey()" placeholder="이름을 입력하세요">
+                    <input type="text" id="name" style="background-color: white; border-left:white; border-right:white; border-top:white;border-bottom:skyblue 2px solid" onkeyup="enterkey()" placeholder="이름을 입력하세요">
                 </div>
             </div>
             <div class="pt-5">
-                <button type="button" id="start" class="btn btn-primary text-nowrap"  style="width: 100px; border:white 2px solid">시작!</button>
+                <button type="button" id="start" class="btn btn-primary text-nowrap" onclick="location.href='stock-simulation.html'" style="width: 100px; border:white 2px solid">시작!</button>
             </div>
         </div>
+
+        <script>
+            let button = document.querySelector("#start");
+		    button.addEventListener("click", () => {
+            
+			let input = document.querySelector("#name");
+			let text = input.value;
+
+            localStorage.setItem('user-name',text);
+
+			if (!text.length) return;
+
+		});
+        </script>
+
     </body>
 </html>
