@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap');
+
+*{
+  margin: 0%;
+  padding: 0%;
+  font-family: 'Gamja Flower', cursive;
+}
+
+body {
+  background-color: rgb(230,255,255);
+  text-align: center;
+}
+
+.grid {
+    width: 1280px;
+    height: 720px;
+    display: grid;
+    grid-template-columns: 320px 640px 320px;
+    grid-template-rows: 80px 480px 80px 80px;
+}
+
+.result{
+    background-color:azure;
+    width: 500px;
+    margin:auto;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 50px;
+}
+.score_rank{
+    background-color:azure;
+    width: 300px;
+    margin:auto;
+    text-align: center;
+    font-size: 40px;
+}
+
+.rightdiv {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.rightdiv-item {
+    width: 300px;
+    height: 460px;
+    margin: 8px 8px;
+    background-color: white;
+    border: 1px solid rgb(84,130,53);
+    box-shadow: 3px 3px grey;
+    font-size: 20px;
+}
+#rank-table {
+  width: 300px;
+  border-collapse: collapse;
+}
+
+#rank-table thead th {
+    height: 60px;
+    background-color: rgb(169,209,142);
+    border: 1px solid rgb(84,130,53);
+  }
+
+#rank-table tbody td {
+    height: 60px;
+    background-color: white;
+    border: 1px solid rgb(84,130,53);
+    text-align: center;
+  }
+  
