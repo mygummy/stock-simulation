@@ -386,7 +386,7 @@ function showChart(option) {
 }
 
 
-// user-table에서 해당 주식이 있는지, 있으면 몇번째에 있는지 찾아줌
+// userstock에서 해당 주식이 있는지, 있으면 몇번째에 있는지 찾아줌
 function findIndex(name) {
 	let len = userstock.length;
 	let index = -1;
@@ -399,11 +399,26 @@ function findIndex(name) {
 	return index;
 }
 
+// user-table에서 해당 주식의 index를 return함
+function findUserTableIndex(name) {
+	let len = $("#user-table > tbody > tr").length;
+	let table = $("#user-table > tbody > tr");
+	let index = -1;
+
+	for(let i = 0; i < len; i++) {
+		let cells = table[i].getElementsByTagName("td");
+		if(name == cells[0].firstChild.data) {
+			index = i;
+			break;
+		}
+	}
+	return index;
+}
 
 $(document).ready(function() {
 	chart.render();
 
-	// 일정 시간마다 반복하는 코드
+	// 일정 시간마다 반복하는 "timer" 코드
 	// 임시로 여기에 적어서 실험했습니다
 	let cnt = 0;
 	let timer = setInterval(function() {
@@ -429,6 +444,15 @@ $(document).ready(function() {
 			$("#stock2-current").text(secondstock.current);
 			$("#stock2-fluctuation").text(secondstock.current - secondstock.opening);
 			
+			// user-table 재설정(손익)
+			let len = $("#user-table > tbody > tr").length;
+			let table = $("#user-table > tbody > tr");
+			for(let i = 0; i < len; i++) {
+				let chart_num = $("#user-table > tbody > tr").eq(i).attr("chart");
+				let cells = $("#user-table > tbody > tr")[i].getElementsByTagName("td");
+				cells[1].firstChild.data = stocklist[chart_num].current * userstock[i].num - userstock[i].totalpurchase;
+			}
+
 			// 현재 시간 재설정
 			let hour = options1.series[0].data[index + 1].x.getHours();
 			let min = options1.series[0].data[index + 1].x.getMinutes();
@@ -441,7 +465,7 @@ $(document).ready(function() {
 			console.log("끝");
 			clearInterval(timer);
 		}
-	}, 10);
+	}, 50);
 });
 
 
@@ -508,16 +532,26 @@ $(".buy").on("click", function() {
 	} else {
 		userstock[index].totalpurchase += purchase * num;
 		userstock[index].num += num;
+		let table_index = findUserTableIndex(current_stock_name);
+		
+		let cells = $("#user-table > tbody > tr")[table_index].getElementsByTagName("td");
+		cells[2].firstChild.data = userstock[index].num;
+		cells[3].firstChild.data = Math.floor(userstock[index].totalpurchase / userstock[index].num);
+
 	}
 
 	// 예수금 차감
 	let depositreceived = Number($("#depositreceived").text());
 	depositreceived -= purchase * num;
 	$("#depositreceived").text(depositreceived);
+
+	// 수량을 0으로 해야함
+	$("#quantity").val(0);
+	showChart(current_stock_chart);
 });
 
 $(".sell").on("click", function() {
 	console.log(userstock);
-	console.log($("#user-table > tbody > tr").length);
+	
+	
 })
-
