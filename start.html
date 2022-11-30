@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko" dir="ltr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,24 +9,10 @@
 	    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
 
         <title>Start Page</title>
-        <style>
-            body{
-                background-image: url('https://media.istockphoto.com/id/1322201350/photo/digitally-enhanced-shot-of-a-graph-showing-the-ups-and-downs-shares-on-the-stock-market.jpg?b=1&s=170667a&w=0&k=20&c=IvUFBAPGMXUQ8oPREy1JfI_cZEKjoqORVl5NoUjo-4o=');
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-
-           .input-contatiner{
-                text-align: center;
-                align-items: center;
-            }
-
-            .box {
-                display: flex;
-                justify-content: center;
-            }
-        </style>
     </head>
+
+    <link rel="stylesheet" href="start_screen_style.css">
+
     <body>
         <div class="input-contatiner">
             <div class="rounded-2" style="background-color: white; width: 500px; margin: 0 auto">
@@ -35,11 +21,11 @@
                 </div>
             </div>
             <div class="box pt-5" style="height: 30px; margin:0 auto">
-                <div id="box" style="color: black; background-color: white; border: 20px; padding: 5px; width: 100px; height: 30px;">
+                <div class="rounded-2" id="box" style="color: black; background-color: white; border: 20px; padding: 5px; width: 100px; height: 30px;">
                     <h6>NAME</h6>
                 </div>
-                <div class="ms-1" style="width: 100px">
-                    <input type="text" id="name" style="background-color: white; border-left:white; border-right:white; border-top:white;border-bottom:skyblue 2px solid" onkeyup="enterkey()" placeholder="이름을 입력하세요">
+                <div class="ms-1" style="width: 150px">
+                    <input type="text" id="name" onkeyup="enterkey()" placeholder="이름을 입력하세요">
                 </div>
             </div>
             <div class="pt-5">
