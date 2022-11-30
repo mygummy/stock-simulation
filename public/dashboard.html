@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>DashBoard</title>
+  </head>
+  <link rel="stylesheet" href="node_modules/apexcharts/dist/apexcharts.css">
+  <link rel="stylesheet" href="style_dash.css">
+  <body>
+    <div class="container">
+      <div class="grid">
+        <div class="title">
+          <h1 id= "name-of-user" class = "result"> 000님의 모의 투자 결과</h1>
+        </div>
+        <div class="costdiv">
+          <div class="costdiv-item">
+            <div class="name_txt">총자산</div>
+          </div>
+        </div>
+        <div class="costnumdiv">
+          <div class="costnumdiv-item">
+          </div>
+        </div>
+        <div class="ratediv">
+          <div class="ratediv-item">
+            <div class="name_txt">손익률</div>          
+          </div>
+        </div>
+        <div class="ratenumdiv">
+          <div class="ratenumdiv-item">
+          </div>
+        </div>
+          <div class="rightdiv">
+            <div class="rightdiv-item">
+              <table id="rank-table">
+                <thead>
+                  <tr>
+                    <th colspan='3' style= "height: 40px; font-size: 30px;">Top 5</th>
+                  </tr>
+                  <tr>
+                    <th>이름</th>
+                    <th>총자산</th>
+                    <th>손익률</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr id="rank0" name="000" rank="0" class="rank">
+                    <td id="user-name">000</td>
+                    <td id="user-money">21000</td>
+                    <td id="increase_rate">4.05%</td>
+                  </tr>
+                  <tr id="rank1" name="???" chart="0" class="rank">
+                    <td id="user-name">>???</td>
+                    <td id="user-money">11000</td>
+                    <td id="increase_rate">1.05%</td>
+                  </tr>
+                  <tr id="rank1" name="???" chart="0" class="rank">
+                    <td id="user-name">>???</td>
+                    <td id="user-money">11000</td>
+                    <td id="increase_rate">1.05%</td>
+                  </tr>
+                  <tr id="rank1" name="???" chart="0" class="rank">
+                    <td id="user-name">>???</td>
+                    <td id="user-money">11000</td>
+                    <td id="increase_rate">1.05%</td>
+                  </tr>
+                  <tr id="rank1" name="???" chart="0" class="rank">
+                    <td id="user-name">>???</td>
+                    <td id="user-money">11000</td>
+                    <td id="increase_rate">1.05%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="buttondiv">
+            <button class="submitbutton">랭킹제출/submit</button>
+            <button class="retrybutton" onclick="location.href='start.html'">다시시작/retry</button>
+          </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    if(localStorage.getItem('user-name')){
+      let lastData = localStorage.getItem('user-name')
+      document.getElementById("name-of-user").innerHTML = lastData;
+    }
+  </script>
+
+</html>
