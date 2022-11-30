@@ -7,6 +7,8 @@
   }
 
 body{
+    width: 1280px;
+    height: 720px;
     background-image: url('startbackground.jpg');
     background-repeat: no-repeat;
     background-size: cover;
