@@ -15,11 +15,16 @@
 
     <body>
         <div class="input-contatiner">
-            <div class="rounded-2" style="background-color: white; width: 500px; margin: 0 auto">
-                <div class="m-5">
-                    <font size="200%" color="black">모의주식투자 게임</font>
+            <div class="mt-5 pt-5">
+                <div class="mt-5 pt-5">
+                    <div class="rounded-2" style="background-color: white; width: 500px; margin: 0 auto">
+                        <div class="m-5">
+                            <font size="200%" color="black">모의주식투자 게임</font>
+                        </div>
+                    </div>
                 </div>
             </div>
+            
             <div class="box pt-5" style="height: 30px; margin:0 auto">
                 <div class="rounded-2" id="box" style="color: black; background-color: white; border: 20px; padding: 5px; width: 100px; height: 30px;">
                     <h6>NAME</h6>
@@ -29,13 +34,10 @@
                 </div>
             </div>
             <div class="pt-5">
+                <button type="button" id="back" class="btn btn-danger text-nowrap" onclick="location.href='manual.html'" style="width: 100px; border:white 2px solid">게임 방법</button>
                 <button type="button" id="start" class="btn btn-primary text-nowrap" onclick="location.href='stock-simulation.html'" style="width: 100px; border:white 2px solid">시작!</button>
             </div>
         </div>
-
-        <div style="position: absolute; right: 0px; bottom: 0px">
-            <button type="button" id="back" class="btn btn-danger text-nowrap" onclick="location.href='manual.html'" style="width: 100px; border:white 2px solid">게임 방법</button>
-        </div> 
 
         <script>
             let button = document.querySelector("#start");
@@ -64,7 +66,6 @@
 			        if (!text.length) return;
     		    }
 		}
-        </script>
-        
+        </script>     
     </body>
 </html>

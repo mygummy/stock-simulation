@@ -10,4 +10,5 @@ body{
     background-image: url('manual.PNG');
     background-repeat: no-repeat;
     background-size: cover;
+    margin: auto;
 }
