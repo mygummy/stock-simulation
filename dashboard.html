@@ -6,28 +6,34 @@
   </head>
   <link rel="stylesheet" href="node_modules/apexcharts/dist/apexcharts.css">
   <link rel="stylesheet" href="style_dash.css">
-
   <body>
-
-
-      <div class="container">
-        <div class="grid">
-        <h1 class = "result"> 000님의 모의 투자 결과</h1>
-        
-        <div class="leftdiv">
-
+    <div class="container">
+      <div class="grid">
+        <h1 class = "result" style="grid-column: 2/4; grid-row: 1/2"> 000님의 모의 투자 결과</h1>
+        <div class="costdiv">
+          <div class="costdiv-item">
+            <div class="name_txt">총자산</div>
+          </div>
         </div>
-
-
-
-
+        <div class="costnumdiv">
+          <div class="costnumdiv-item">
+          </div>
+        </div>
+        <div class="ratediv">
+          <div class="ratediv-item">
+            <div class="name_txt">손익률</div>          
+          </div>
+        </div>
+        <div class="ratenumdiv">
+          <div class="ratenumdiv-item">
+          </div>
+        </div>
           <div class="rightdiv">
             <div class="rightdiv-item">
               <table id="rank-table">
-                <h1 class = "score_rank">Score Ranking</h2>
                 <thead>
                   <tr>
-                    <th colspan='3' style= "height: 30px;">Top 5</th>
+                    <th colspan='3' style= "height: 40px; font-size: 30px;">Top 5</th>
                   </tr>
                   <tr>
                     <th>이름</th>
@@ -50,12 +56,10 @@
               </table>
             </div>
           </div>
-        <button type="button" class="btn btn-lg btn-primary">다시시작?</button>
+        <button class="rankbutton">랭킹사이트</button>
       </div>
     </div>
-
   </body>
-
   <script>
 
   </script>
