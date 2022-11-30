@@ -44,31 +44,31 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr id="rank0" name="000" rank="0" class="rank">
-                    <td id="user-name">000</td>
-                    <td id="user-money">21000</td>
-                    <td id="increase_rate">4.05%</td>
+                  <!-- <tr id="rank0" name="000" rank="0" class="rank">
+                    <td id="user-name"></td>
+                    <td id="user-money"></td>
+                    <td id="increase_rate"></td>
                   </tr>
                   <tr id="rank1" name="???" chart="0" class="rank">
-                    <td id="user-name">>???</td>
-                    <td id="user-money">11000</td>
-                    <td id="increase_rate">1.05%</td>
+                    <td id="user-name"></td>
+                    <td id="user-money"></td>
+                    <td id="increase_rate"></td>
                   </tr>
-                  <tr id="rank1" name="???" chart="0" class="rank">
-                    <td id="user-name">>???</td>
-                    <td id="user-money">11000</td>
-                    <td id="increase_rate">1.05%</td>
+                  <tr id="rank2" name="???" chart="0" class="rank">
+                    <td id="user-name"></td>
+                    <td id="user-money"></td>
+                    <td id="increase_rate"></td>
                   </tr>
-                  <tr id="rank1" name="???" chart="0" class="rank">
-                    <td id="user-name">>???</td>
-                    <td id="user-money">11000</td>
-                    <td id="increase_rate">1.05%</td>
+                  <tr id="rank3" name="???" chart="0" class="rank">
+                    <td id="user-name"></td>
+                    <td id="user-money"></td>
+                    <td id="increase_rate"></td>
                   </tr>
-                  <tr id="rank1" name="???" chart="0" class="rank">
-                    <td id="user-name">>???</td>
-                    <td id="user-money">11000</td>
-                    <td id="increase_rate">1.05%</td>
-                  </tr>
+                  <tr id="rank4" name="???" chart="0" class="rank">
+                    <td id="user-name"></td>
+                    <td id="user-money"></td>
+                    <td id="increase_rate"></td>
+                  </tr> -->
                 </tbody>
               </table>
             </div>
@@ -85,6 +85,31 @@
       let lastData = localStorage.getItem('user-name')
       document.getElementById("name-of-user").innerHTML = lastData;
     }
+  </script>
+
+  
+  <script>
+    function loadrank() {
+          fetch("/user_sps", { method: "GET" })
+              .then((res) => res.json())
+              .then((user_sps) => {
+                  let list = document.getElementById("tbody");
+                  list.innerHTML = "";
+                  user_sps.forEach(user_sp => {
+                      let th = document.createElement("th");
+                      let td_1 = document.createElement("td");
+                      let td_2 = document.createElement("td");
+                      let td_3 = document.createElement("td");
+                      td_1.innerText = user_sp.nam;
+                      td_2.innerText = user_sp.mon;
+                      td_3.innerText = user_sp.rat;
+                      th.appendChild(td_1);
+                      th.appendChild(td_2);
+                      th.appendChild(td_3);
+                      list.appendChild(th);
+                  })
+              })
+      }
   </script>
 
 </html>
