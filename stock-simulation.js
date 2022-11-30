@@ -465,7 +465,7 @@ $(document).ready(function() {
 			console.log("끝");
 			clearInterval(timer);
 		}
-	}, 75);
+	}, 125);
 });
 
 
