@@ -9,7 +9,9 @@
   <body>
     <div class="container">
       <div class="grid">
-        <h1 class = "result" style="grid-column: 2/4; grid-row: 1/2"> 000님의 모의 투자 결과</h1>
+        <div class="title">
+          <h1 id= "name-of-user" class = "result"> 000님의 모의 투자 결과</h1>
+        </div>
         <div class="costdiv">
           <div class="costdiv-item">
             <div class="name_txt">총자산</div>
@@ -56,12 +58,18 @@
               </table>
             </div>
           </div>
-        <button class="rankbutton">랭킹사이트</button>
+          <div class="buttondiv">
+            <button class="submitbutton">랭킹제출/submit</button>
+            <button class="retrybutton" onclick="location.href='start.html'">다시시작/retry</button>
+          </div>
       </div>
     </div>
   </body>
   <script>
-
+    if(localStorage.getItem('user-name')){
+      let lastData = localStorage.getItem('user-name')
+      document.getElementById("name-of-user").innerHTML = lastData;
+    }
   </script>
 
 </html>
