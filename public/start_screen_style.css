@@ -12,6 +12,7 @@ body{
     background-image: url('startbackground.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    margin:auto;
 }
 
 .input-contatiner{
