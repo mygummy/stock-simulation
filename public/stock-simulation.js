@@ -444,9 +444,6 @@ $(document).ready(function() {
 			$("#stock2-current").text(secondstock.current);
 			$("#stock2-fluctuation").text(secondstock.current - secondstock.opening);
 			
-			// 총자산 = 예수금 + 총 매입가 + 총 손익
-			let totalassets = Number($("#depositreceived").text())
-
 			// user-table 재설정(손익)
 			let len = $("#user-table > tbody > tr").length;
 			let table = $("#user-table > tbody > tr");
@@ -454,13 +451,8 @@ $(document).ready(function() {
 				let chart_num = $("#user-table > tbody > tr").eq(i).attr("chart");
 				let cells = $("#user-table > tbody > tr")[i].getElementsByTagName("td");
 				cells[1].firstChild.data = stocklist[chart_num].current * userstock[i].num - userstock[i].totalpurchase;
-				// 총자산 추가
-				totalassets += Number(cells[1].firstChild.data);
-				totalassets += userstock[i].totalpurchase;
-			}	
-			// 총자산 재설정
-			$("#totalassets").text(totalassets);
-			
+			}
+
 			// 현재 시간 재설정
 			let hour = options1.series[0].data[index + 1].x.getHours();
 			let min = options1.series[0].data[index + 1].x.getMinutes();
@@ -542,7 +534,6 @@ $(".buy").on("click", function() {
 		userstock[index].num += num;
 		let table_index = findUserTableIndex(current_stock_name);
 		
-		// user-table 재설정(수량, 매입가)
 		let cells = $("#user-table > tbody > tr")[table_index].getElementsByTagName("td");
 		cells[2].firstChild.data = userstock[index].num;
 		cells[3].firstChild.data = Math.floor(userstock[index].totalpurchase / userstock[index].num);

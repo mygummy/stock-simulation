@@ -25,10 +25,12 @@ npm install apexcharts --save
 - 수량 조정: 매도 수량이 해당 주식 보유 수량보다 많을 경우 어떻게 할 것인가?
 - 숫자 천 단위마다 쉼표 추가(어려움)
 
-추가 내용
-- 시작 페이지 작성
-- 이름 입력 시 다음 화면으로 전환
-- 게임 화면에 이름 출력
+시작 페이지에 추가한 내용
+- 시작 페이지 작성 완료
+- 이름 입력 시 다음 화면으로 전환(enter키 사용 가능)
+- 인게임 화면에 이전 화면에서 입력한 이름 출력
+- 게임플레이 방법 안내(우측 하단 적색 버튼 클릭으로 시작화면 설명화면 전환 가능)
 
-시작페이지에 추가할 내용
-- 체크박스 & 게임플레이 방법 안내
+중요! public 파일 문제
+현재 stock-simulation.html이 node_modules를 못 읽어오는 중
+- public 추가 전 깃허브 리포지토리와 비교했을 때, public에 없는 파일: .gitignore / LICENSE / README.md / main.js / package-lock.json / package.json
