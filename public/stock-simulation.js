@@ -1861,10 +1861,10 @@ $(document).ready(function() {
 				money: money,
 				rate: (money / 10000).toFixed(2),
 			}
-			localStorage.setItem('user_sps',user_sp);
-			// location.href='dashboard.html';
+			localStorage.setItem('user_sps',JSON.stringify( user_sp ));
+			location.href='dashboard.html';
 		}
-	}, 125);
+	}, 5);
 });
 
 // stock-table 행 클릭시

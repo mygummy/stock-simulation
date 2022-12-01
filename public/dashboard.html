@@ -118,18 +118,40 @@
 
     function loadRank() {
       let lastRank = localStorage.getItem("ranks");
-      if (!lastRank) return;
-      ranks =JSON.parse(lastRank);
-      if(ranks.length <= 5){
+      console.log(lastRank);
+      if (lastRank === null){ 
         let datas = JSON.parse(localStorage.getItem('user_sps')); 
         ranks.push(datas);
-        saveRank();
+        ranks.forEach(addToList);
+        saveRank()
+        return 0;
       }
 
+      console.log(JSON.parse(lastRank));
+      ranks = JSON.parse(lastRank);
+      let datas = JSON.parse(localStorage.getItem('user_sps'));
+      let idx = ranks.length
+      for(let i = 0; i < idx; i++){
+        if (datas['money'] < ranks[i]['money']){
+          continue;
+        }
+        else{
+          ranks.splice(i,0,datas);
+          break;
+        }
+      }
+      saveRank()
+
+
+      if(ranks.length >= 5){
+        ranks = ranks.slice(0,5);
+        saveRank()
+      } 
       ranks.forEach(addToList);
     }
-    
+
     function saveRank() {
+      console.log("aa")
       localStorage.setItem("ranks", JSON.stringify(ranks));
     }
 
@@ -157,7 +179,6 @@
 
 
 
-    localStorage.setItem('ranks',JSON.stringify(ranks))
     if (localStorage.getItem('user_sps')) {
       let datas = JSON.parse( localStorage.getItem('user_sps') );
       document.getElementById("cost_num").innerText = datas['money'];
