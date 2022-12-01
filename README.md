@@ -90,5 +90,5 @@ npm install apexcharts --save
 8. style: stock-simulation.html의 디자인
 9. style_dash: dashboard.html의 디자인
 10. thumbnail.png: 앱의 썸네일 사진
-11. startbackground.png: index.html의 배경화면 사진
+11. startbackground.jpg: index.html의 배경화면 사진
 12. manual.png: 게임 방법을 설명하는 사진
