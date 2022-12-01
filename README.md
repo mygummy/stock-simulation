@@ -39,26 +39,34 @@ npm install apexcharts --save
 
 
 //README.md 최종본 (작성 중)
-The name of app: 내일은 주식왕!
 
-Screenshots of your app: 매매 사진 업로드
+**The name of app:** 내일은 주식왕!
+
+**Screenshots of your app:**
+
+<div align=center>
 ###시작 화면###
-
+<img width="1280" alt="start" src="https://user-images.githubusercontent.com/113420520/205119162-0dddb34f-ceb5-4ebb-9d2f-93672fa95a66.png">
+  
 ###게임 설명 화면###
-
+<img width="1280" alt="manual" src="https://user-images.githubusercontent.com/113420520/205119279-6df49506-2108-4089-8524-f533fdbf7b35.png">
+  
 ###주식 매매 화면###
 <img width="1280" alt="in-game" src="https://user-images.githubusercontent.com/113420520/205117045-bf783813-6c48-4fd7-869d-314f36bf0110.png">
 
 ###랭킹 화면###
-Youtube link: 여기에 쓸 것
 
-How to install
+</div>
+
+**Youtube link:** 여기에 쓸 것
+
+**How to install**
 1. public 파일 다운로드
 2. index.html 실행 전 다음 2개의 명령어를 쳐야 함
 npm install jquery --save
 npm install apexcharts --save
 
-How to play:
+**How to play:**
 1. public 파일 안에 있는 index.html 실행
 2. '게임 방법' 버튼을 클릭해서 게임 방법을 익힌 뒤 '이전으로' 버튼을 눌러서 이전 화면으로 돌아온다.
 3. 자신의 이름을 작성한 후 '시작!' 버튼을 누른다.
@@ -68,9 +76,9 @@ How to play:
 7. 화면 하단의 '랭킹제출/submit'버튼을 눌러 랭킹에 자신의 투자 결과를 등록할 수 있다. 우측에서 수익률 상위 5명의 투자 결과를 확인할 수 있다.
 8. '다시시작/retry'버튼을 눌러 게임을 다시 플레이 할 수 있다. 
 
-Example: 실행 화면 사진을 보여주자
+**Example:** 실행 화면 사진을 보여주자
 
-Documentation:
+**Documentation:**
 
 1. index.html: 게임의 시작 화면을 보여주는 html 파일
 2. manual.html: 게임 방법을 알려주는 html 파일
