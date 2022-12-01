@@ -42,7 +42,14 @@ npm install apexcharts --save
 The name of app: 내일은 주식왕!
 
 Screenshots of your app: 매매 사진 업로드
+###시작 화면###
 
+###게임 설명 화면###
+
+###주식 매매 화면###
+<img width="1280" alt="in-game" src="https://user-images.githubusercontent.com/113420520/205117045-bf783813-6c48-4fd7-869d-314f36bf0110.png">
+
+###랭킹 화면###
 Youtube link: 여기에 쓸 것
 
 How to install
