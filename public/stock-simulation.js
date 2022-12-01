@@ -1852,17 +1852,19 @@ $(document).ready(function() {
 
 			// dashboard.html 연결 + localStorage로 data 보내기
 			let name = $("#name-of-user").text();
+			console.log(name);
 			let money = Number($("#totalassets").text());
-			name = name.substring(0, -7)
+			name = name.slice(0, -7)
+			console.log(name);
 			let user_sp = {
 				name: name,
 				money: money,
 				rate: (money / 10000).toFixed(2),
 			}
 			localStorage.setItem('user_sps',user_sp);
-			location.href='dashboard.html';
+			// location.href='dashboard.html';
 		}
-	}, 125);
+	}, 10);
 });
 
 
