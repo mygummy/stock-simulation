@@ -65,6 +65,7 @@ npm install apexcharts --save
 2. index.html 실행 전 다음 2개의 명령어를 쳐야 함
 
 npm install jquery --save
+
 npm install apexcharts --save
 
 **How to play:**
