@@ -19,6 +19,7 @@
         </div>
         <div class="costnumdiv">
           <div class="costnumdiv-item">
+            <div id="cost_num" class="name_txt"></div>
           </div>
         </div>
         <div class="ratediv">
@@ -28,6 +29,7 @@
         </div>
         <div class="ratenumdiv">
           <div class="ratenumdiv-item">
+            <div id="rate_num" class="name_txt">손익률</div>
           </div>
         </div>
           <div class="rightdiv">
@@ -43,7 +45,7 @@
                     <th>손익률</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody id="ranktata" >
                   <!-- <tr id="rank0" name="000" rank="0" class="rank">
                     <td id="user-name"></td>
                     <td id="user-money"></td>
@@ -74,7 +76,6 @@
             </div>
           </div>
           <div class="buttondiv">
-            <button class="submitbutton">랭킹제출/submit</button>
             <button class="retrybutton" onclick="location.href='index.html'">다시시작/retry</button>
           </div>
       </div>
@@ -83,12 +84,13 @@
   <script>
     if(localStorage.getItem('user-name')){
       let lastData = localStorage.getItem('user-name')
+      console.log(lastData)
       document.getElementById("name-of-user").innerHTML = lastData;
     }
   </script>
 
   
-  <script>
+  <!-- <script>
     function loadrank() {
           fetch("/user_sps", { method: "GET" })
               .then((res) => res.json())
@@ -110,6 +112,71 @@
                   })
               })
       }
+  </script> -->
+  <script>
+    let ranks = []
+
+    function loadRank() {
+      let lastRank = localStorage.getItem("ranks");
+      if (!lastRank) return;
+      ranks =JSON.parse(lastRank);
+      if(ranks.length <= 5){
+        let datas = JSON.parse(localStorage.getItem('user_sps')); 
+        ranks.push(datas);
+        saveRank();
+      }
+
+      ranks.forEach(addToList);
+    }
+    
+    function saveRank() {
+      localStorage.setItem("ranks", JSON.stringify(ranks));
+    }
+
+		function addToList(rank) {
+      let list = document.getElementById("ranktata");
+      let tr = document.createElement("tr");
+      let td_1 = document.createElement("td"); 
+      let td_2 = document.createElement("td");
+      let td_3 = document.createElement("td");
+      td_1.id = 'user-name';
+      td_2.id = 'user-money';
+      td_3.id = 'increase_rate';
+      td_1.innerText = rank['name'];
+      td_2.innerText = rank['money'];
+      td_3.innerText = rank['rate'];
+      tr.appendChild(td_1);
+      tr.appendChild(td_2);
+      tr.appendChild(td_3);
+      list.appendChild(tr);
+		}
+
+		window.addEventListener("load", () => {
+			loadRank();
+		});
+
+
+
+    localStorage.setItem('ranks',JSON.stringify(ranks))
+    if (localStorage.getItem('user_sps')) {
+      let datas = JSON.parse( localStorage.getItem('user_sps') );
+      document.getElementById("cost_num").innerText = datas['money'];
+      document.getElementById("rate_num").innerHTML = datas['rate'];    
+    }
+
+    // if (localStorage.getItem('user_sps')) {
+    //   let datas = JSON.parse( localStorage.getItem('user_sps') ) 
+    //   if(rank.length < 6){
+    //     ranks.push(datas)
+    //   }
+    // }
+
+
+
+
+
+
+
   </script>
 
 </html>
