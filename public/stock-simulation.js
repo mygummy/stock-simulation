@@ -1,10 +1,10 @@
 // 현재 선택중인 주식(name은 주식 이름, chart는 주식 옵션 index)
-let current_stock_name = "OO전자"
+let current_stock_name = "삼성전자"
 let current_stock_chart = 0
 
 // 주식 목록
 let firststock = {
-	name: "OO전자",
+	name: "삼성전자",
 	opening: 60000,
 	past: 60000,
 	current: 60000,
@@ -12,15 +12,71 @@ let firststock = {
 }
 
 let secondstock = {
-	name: "TT항공",
+	name: "대한항공",
 	opening: 20000,
 	past: 20000,
 	current: 20000,
 	unit: 100,
 }
 
+let thirdstock = {
+	name: "현대자동차",
+	opening: 50000,
+	past: 50000,
+	current: 50000,
+	unit: 500,
+}
+
+let fourthstock = {
+	name: "두산중공업",
+	opening: 40000,
+	past: 40000,
+	current: 40000,
+	unit: 500,
+}
+
+let fifthstock = {
+	name: "서울우유",
+	opening: 5000,
+	past: 5000,
+	current: 5000,
+	unit: 40,
+}
+
+let sixthstock = {
+	name: "파리바게트",
+	opening: 8000,
+	past: 8000,
+	current: 8000,
+	unit: 90,
+}
+
+let seventhstock = {
+	name: "알촌",
+	opening: 70000,
+	past: 70000,
+	current: 70000,
+	unit: 800,
+}
+
+let eighthstock = {
+	name: "이명근떡볶이",
+	opening: 10000,
+	past: 10000,
+	current: 10000,
+	unit: 100,
+}
+
+let ninthstock = {
+	name: "정돈",
+	opening: 20000,
+	past: 20000,
+	current: 20000,
+	unit: 300,
+}
+
 // 주식 리스트
-let stocklist = [firststock, secondstock]
+let stocklist = [firststock, secondstock,thirdstock,fourthstock,fifthstock,sixthstock,seventhstock,eighthstock,ninthstock]
 
 // 주식 차트 옵션(data, 기본 설정 등이 담겨 있음)
 let options1 = {
@@ -345,8 +401,1135 @@ let options2 = {
   	}
 };
 
+let options3 = {
+    series: [{
+    	data: [
+		{
+        	x: new Date(2022, 10, 28, 8, 50),
+			y: [50000, 50000, 50500, 50500]
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 9, 00),
+        	y: [50500, 50500, 50000, 50000]
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 9, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 9, 20),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 9, 30),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 9, 40),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 9, 50),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 10, 00),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 10, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 10, 20),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 10, 30),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 10, 40),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 10, 50),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 11, 00),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 11, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 11, 20),
+      	},
+      	{
+    	    x: new Date(2022, 10, 28, 11, 30),
+    	},
+      	{
+        	x: new Date(2022, 10, 28, 11, 40),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 11, 50),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 12, 00),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 12, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 12, 20),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 12, 30),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 12, 40),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 12, 50),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 13, 00),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 13, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 13, 20),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 13, 30),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 13, 40),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 13, 50),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 14, 00),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 14, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 14, 20),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 14, 30),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 14, 40),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 14, 50),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 15, 00),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 15, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 15, 20),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 15, 30),
+      	},
+    	]
+  	}],
+ 	chart: {
+    	animations: {
+        	enabled: false
+      	},
+      	type: 'candlestick',
+      	height: 520,
+      	toolbar: {
+      		show: false
+      	}
+    },
+  
+  	xaxis: {
+    	type: 'datetime',
+    	labels: {
+        	show: true,
+			datetimeUTC: false,
+    	},
+  	},
+  	yaxis: {
+		tickAmount: 6,
+    	opposite: true,
+    	labels: {
+        	show: true,
+        	align: 'right'
+    	},
+    	tooltip: {
+      		enabled: true
+    	}
+  	}
+};
+
+let options4 = {
+    series: [{
+    	data: [
+		{
+        	x: new Date(2022, 10, 28, 8, 50),
+			y: [40000, 40000, 40500, 40500]
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 9, 00),
+        	y: [40500, 40500, 40000, 40000]
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 9, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 9, 20),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 9, 30),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 9, 40),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 9, 50),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 10, 00),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 10, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 10, 20),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 10, 30),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 10, 40),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 10, 50),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 11, 00),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 11, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 11, 20),
+      	},
+      	{
+    	    x: new Date(2022, 10, 28, 11, 30),
+    	},
+      	{
+        	x: new Date(2022, 10, 28, 11, 40),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 11, 50),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 12, 00),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 12, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 12, 20),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 12, 30),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 12, 40),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 12, 50),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 13, 00),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 13, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 13, 20),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 13, 30),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 13, 40),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 13, 50),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 14, 00),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 14, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 14, 20),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 14, 30),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 14, 40),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 14, 50),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 15, 00),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 15, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 15, 20),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 15, 30),
+      	},
+    	]
+  	}],
+ 	chart: {
+    	animations: {
+        	enabled: false
+      	},
+      	type: 'candlestick',
+      	height: 520,
+      	toolbar: {
+      		show: false
+      	}
+    },
+  
+  	xaxis: {
+    	type: 'datetime',
+    	labels: {
+        	show: true,
+			datetimeUTC: false,
+    	},
+  	},
+  	yaxis: {
+		tickAmount: 6,
+    	opposite: true,
+    	labels: {
+        	show: true,
+        	align: 'right'
+    	},
+    	tooltip: {
+      		enabled: true
+    	}
+  	}
+};
+
+let options5 = {
+    series: [{
+    	data: [
+		{
+        	x: new Date(2022, 10, 28, 8, 50),
+			y: [5000, 5000, 5040, 5040]
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 9, 00),
+        	y: [5040, 5040, 5000, 5000]
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 9, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 9, 20),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 9, 30),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 9, 40),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 9, 50),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 10, 00),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 10, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 10, 20),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 10, 30),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 10, 40),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 10, 50),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 11, 00),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 11, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 11, 20),
+      	},
+      	{
+    	    x: new Date(2022, 10, 28, 11, 30),
+    	},
+      	{
+        	x: new Date(2022, 10, 28, 11, 40),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 11, 50),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 12, 00),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 12, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 12, 20),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 12, 30),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 12, 40),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 12, 50),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 13, 00),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 13, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 13, 20),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 13, 30),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 13, 40),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 13, 50),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 14, 00),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 14, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 14, 20),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 14, 30),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 14, 40),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 14, 50),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 15, 00),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 15, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 15, 20),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 15, 30),
+      	},
+    	]
+  	}],
+ 	chart: {
+    	animations: {
+        	enabled: false
+      	},
+      	type: 'candlestick',
+      	height: 520,
+      	toolbar: {
+      		show: false
+      	}
+    },
+  
+  	xaxis: {
+    	type: 'datetime',
+    	labels: {
+        	show: true,
+			datetimeUTC: false,
+    	},
+  	},
+  	yaxis: {
+		tickAmount: 6,
+    	opposite: true,
+    	labels: {
+        	show: true,
+        	align: 'right'
+    	},
+    	tooltip: {
+      		enabled: true
+    	}
+  	}
+};
+
+let options6 = {
+    series: [{
+    	data: [
+		{
+        	x: new Date(2022, 10, 28, 8, 50),
+			y: [8000, 8000, 8090, 8090]
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 9, 00),
+        	y: [8090, 8090, 8000, 8000]
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 9, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 9, 20),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 9, 30),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 9, 40),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 9, 50),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 10, 00),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 10, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 10, 20),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 10, 30),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 10, 40),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 10, 50),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 11, 00),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 11, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 11, 20),
+      	},
+      	{
+    	    x: new Date(2022, 10, 28, 11, 30),
+    	},
+      	{
+        	x: new Date(2022, 10, 28, 11, 40),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 11, 50),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 12, 00),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 12, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 12, 20),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 12, 30),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 12, 40),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 12, 50),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 13, 00),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 13, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 13, 20),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 13, 30),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 13, 40),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 13, 50),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 14, 00),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 14, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 14, 20),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 14, 30),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 14, 40),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 14, 50),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 15, 00),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 15, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 15, 20),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 15, 30),
+      	},
+    	]
+  	}],
+ 	chart: {
+    	animations: {
+        	enabled: false
+      	},
+      	type: 'candlestick',
+      	height: 520,
+      	toolbar: {
+      		show: false
+      	}
+    },
+  
+  	xaxis: {
+    	type: 'datetime',
+    	labels: {
+        	show: true,
+			datetimeUTC: false,
+    	},
+  	},
+  	yaxis: {
+		tickAmount: 6,
+    	opposite: true,
+    	labels: {
+        	show: true,
+        	align: 'right'
+    	},
+    	tooltip: {
+      		enabled: true
+    	}
+  	}
+};
+
+let options7 = {
+    series: [{
+    	data: [
+		{
+        	x: new Date(2022, 10, 28, 8, 50),
+			y: [70000, 70000, 70800, 70800]
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 9, 00),
+        	y: [70800, 70800, 70000, 70000]
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 9, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 9, 20),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 9, 30),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 9, 40),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 9, 50),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 10, 00),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 10, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 10, 20),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 10, 30),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 10, 40),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 10, 50),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 11, 00),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 11, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 11, 20),
+      	},
+      	{
+    	    x: new Date(2022, 10, 28, 11, 30),
+    	},
+      	{
+        	x: new Date(2022, 10, 28, 11, 40),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 11, 50),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 12, 00),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 12, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 12, 20),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 12, 30),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 12, 40),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 12, 50),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 13, 00),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 13, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 13, 20),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 13, 30),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 13, 40),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 13, 50),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 14, 00),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 14, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 14, 20),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 14, 30),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 14, 40),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 14, 50),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 15, 00),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 15, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 15, 20),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 15, 30),
+      	},
+    	]
+  	}],
+ 	chart: {
+    	animations: {
+        	enabled: false
+      	},
+      	type: 'candlestick',
+      	height: 520,
+      	toolbar: {
+      		show: false
+      	}
+    },
+  
+  	xaxis: {
+    	type: 'datetime',
+    	labels: {
+        	show: true,
+			datetimeUTC: false,
+    	},
+  	},
+  	yaxis: {
+		tickAmount: 6,
+    	opposite: true,
+    	labels: {
+        	show: true,
+        	align: 'right'
+    	},
+    	tooltip: {
+      		enabled: true
+    	}
+  	}
+};
+
+let options8 = {
+    series: [{
+    	data: [
+		{
+        	x: new Date(2022, 10, 28, 8, 50),
+			y: [10000, 10000, 10100, 10100]
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 9, 00),
+        	y: [10100, 10100, 10000, 10000]
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 9, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 9, 20),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 9, 30),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 9, 40),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 9, 50),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 10, 00),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 10, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 10, 20),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 10, 30),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 10, 40),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 10, 50),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 11, 00),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 11, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 11, 20),
+      	},
+      	{
+    	    x: new Date(2022, 10, 28, 11, 30),
+    	},
+      	{
+        	x: new Date(2022, 10, 28, 11, 40),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 11, 50),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 12, 00),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 12, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 12, 20),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 12, 30),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 12, 40),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 12, 50),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 13, 00),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 13, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 13, 20),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 13, 30),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 13, 40),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 13, 50),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 14, 00),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 14, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 14, 20),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 14, 30),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 14, 40),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 14, 50),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 15, 00),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 15, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 15, 20),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 15, 30),
+      	},
+    	]
+  	}],
+ 	chart: {
+    	animations: {
+        	enabled: false
+      	},
+      	type: 'candlestick',
+      	height: 520,
+      	toolbar: {
+      		show: false
+      	}
+    },
+  
+  	xaxis: {
+    	type: 'datetime',
+    	labels: {
+        	show: true,
+			datetimeUTC: false,
+    	},
+  	},
+  	yaxis: {
+		tickAmount: 6,
+    	opposite: true,
+    	labels: {
+        	show: true,
+        	align: 'right'
+    	},
+    	tooltip: {
+      		enabled: true
+    	}
+  	}
+};
+
+let options9 = {
+    series: [{
+    	data: [
+		{
+        	x: new Date(2022, 10, 28, 8, 50),
+			y: [20000, 20000, 20300, 20300]
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 9, 00),
+        	y: [20300, 20300, 20000, 20000]
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 9, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 9, 20),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 9, 30),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 9, 40),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 9, 50),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 10, 00),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 10, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 10, 20),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 10, 30),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 10, 40),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 10, 50),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 11, 00),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 11, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 11, 20),
+      	},
+      	{
+    	    x: new Date(2022, 10, 28, 11, 30),
+    	},
+      	{
+        	x: new Date(2022, 10, 28, 11, 40),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 11, 50),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 12, 00),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 12, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 12, 20),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 12, 30),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 12, 40),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 12, 50),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 13, 00),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 13, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 13, 20),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 13, 30),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 13, 40),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 13, 50),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 14, 00),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 14, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 14, 20),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 14, 30),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 14, 40),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 14, 50),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 15, 00),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 15, 10),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 15, 20),
+      	},
+      	{
+        	x: new Date(2022, 10, 28, 15, 30),
+      	},
+    	]
+  	}],
+ 	chart: {
+    	animations: {
+        	enabled: false
+      	},
+      	type: 'candlestick',
+      	height: 520,
+      	toolbar: {
+      		show: false
+      	}
+    },
+  
+  	xaxis: {
+    	type: 'datetime',
+    	labels: {
+        	show: true,
+			datetimeUTC: false,
+    	},
+  	},
+  	yaxis: {
+		tickAmount: 6,
+    	opposite: true,
+    	labels: {
+        	show: true,
+        	align: 'right'
+    	},
+    	tooltip: {
+      		enabled: true
+    	}
+  	}
+};
+
 // 주식 차트 옵션 리스트
-let chartoption = [options1, options2]
+let chartoption = [options1, options2, options3, options4, options5, options6, options7, options8, options9]
 let chart = new ApexCharts(document.querySelector(".chartdiv-chart"), options1);
 
 // 유저가 보유하고 있는 리스트
@@ -439,6 +1622,41 @@ $(document).ready(function() {
 			secondstock.current = secondstock.current + secondstock.unit * random;
 			options2.series[0].data[index + 1].y = [secondstock.past, secondstock.past, secondstock.current, secondstock.current]
 			
+			random = Math.floor(Math.random() * 21) - 10;
+			thirdstock.past = thirdstock.current;
+			thirdstock.current = thirdstock.current + thirdstock.unit * random;
+			options3.series[0].data[index + 1].y = [thirdstock.past, thirdstock.past, thirdstock.current, thirdstock.current]
+
+			random = Math.floor(Math.random() * 21) - 10;
+			fourthstock.past = fourthstock.current;
+			fourthstock.current = fourthstock.current + fourthstock.unit * random;
+			options4.series[0].data[index + 1].y = [fourthstock.past, fourthstock.past, fourthstock.current, fourthstock.current]
+			
+			random = Math.floor(Math.random() * 21) - 10;
+			fifthstock.past = fifthstock.current;
+			fifthstock.current = fifthstock.current + fifthstock.unit * random;
+			options5.series[0].data[index + 1].y = [fifthstock.past, fifthstock.past, fifthstock.current, fifthstock.current]
+
+			random = Math.floor(Math.random() * 21) - 10;
+			sixthstock.past = sixthstock.current;
+			sixthstock.current = sixthstock.current + sixthstock.unit * random;
+			options6.series[0].data[index + 1].y = [sixthstock.past, sixthstock.past, sixthstock.current, sixthstock.current]
+			
+			random = Math.floor(Math.random() * 21) - 10;
+			seventhstock.past = seventhstock.current;
+			seventhstock.current = seventhstock.current + seventhstock.unit * random;
+			options7.series[0].data[index + 1].y = [seventhstock.past, seventhstock.past, seventhstock.current, seventhstock.current]
+			
+			random = Math.floor(Math.random() * 21) - 10;
+			eighthstock.past = eighthstock.current;
+			eighthstock.current = eighthstock.current + eighthstock.unit * random;
+			options8.series[0].data[index + 1].y = [eighthstock.past, eighthstock.past, eighthstock.current, eighthstock.current]
+			
+			random = Math.floor(Math.random() * 21) - 10;
+			ninthstock.past = ninthstock.current;
+			ninthstock.current = ninthstock.current + ninthstock.unit * random;
+			options9.series[0].data[index + 1].y = [ninthstock.past, ninthstock.past, ninthstock.current, ninthstock.current]
+
 			// stock-table 재설정(현재가, 등락)
 			$("#stock1-current").text(firststock.current);
 			$("#stock1-fluctuation").text(firststock.current - firststock.opening);
@@ -446,6 +1664,26 @@ $(document).ready(function() {
 			$("#stock2-current").text(secondstock.current);
 			$("#stock2-fluctuation").text(secondstock.current - secondstock.opening);
 			
+			$("#stock3-current").text(thirdstock.current);
+			$("#stock3-fluctuation").text(thirdstock.current - thirdstock.opening);
+
+			$("#stock4-current").text(fourthstock.current);
+			$("#stock4-fluctuation").text(fourthstock.current - fourthstock.opening);
+
+			$("#stock5-current").text(fifthstock.current);
+			$("#stock5-fluctuation").text(fifthstock.current - fifthstock.opening);
+			
+			$("#stock6-current").text(sixthstock.current);
+			$("#stock6-fluctuation").text(sixthstock.current - sixthstock.opening);
+			
+			$("#stock7-current").text(seventhstock.current);
+			$("#stock7-fluctuation").text(seventhstock.current - seventhstock.opening);
+			
+			$("#stock8-current").text(eighthstock.current);
+			$("#stock8-fluctuation").text(eighthstock.current - eighthstock.opening);
+
+			$("#stock9-current").text(ninthstock.current);
+			$("#stock9-fluctuation").text(ninthstock.current - ninthstock.opening);
 			// 총자산 = 예수금 + 총 매입가 + 총 손익
 			let totalassets = Number($("#depositreceived").text())
 

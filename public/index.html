@@ -17,25 +17,27 @@
         <div class="input-contatiner">
             <div class="mt-5 pt-5">
                 <div class="mt-5 pt-5">
-                    <div class="rounded-2" style="background-color: white; width: 500px; margin: 0 auto">
-                        <div class="m-5">
-                            <font size="200%" color="black">모의주식투자 게임</font>
+                    <div class="rounded-2" style="background-color: rgb(230,255,255); width: 360px; height:100px ;margin: 0 auto; border: 1px solid rgb(84,130,53);
+                    box-shadow: 3px 3px gray;">
+                        <div class="m-3">
+                            <font size="100%" color="black">내일은 주식왕!</font>
                         </div>
                     </div>
                 </div>
             </div>
             
             <div class="box pt-5" style="height: 30px; margin:0 auto">
-                <div class="rounded-2" id="box" style="color: black; background-color: white; border: 20px; padding: 5px; width: 100px; height: 30px;">
+                <div class="rounded-2" id="box" style="color: black; background-color: rgb(230,255,255); border: 20px; padding: 5px; width: 100px; height: 30px; border: 1px solid rgb(84,130,53);
+                box-shadow: 3px 3px gray;">
                     <h6>NAME</h6>
                 </div>
-                <div class="ms-1" style="width: 150px">
+                <div class="ms-1" style="width: 150px;">
                     <input type="text" id="name" onkeyup="enterkey()" placeholder="이름을 입력하세요">
                 </div>
             </div>
             <div class="pt-5">
                 <button type="button" id="back" class="btn btn-danger text-nowrap" onclick="location.href='manual.html'" style="width: 100px; border:white 2px solid">게임 방법</button>
-                <button type="button" id="start" class="btn btn-primary text-nowrap" onclick="location.href='stock-simulation.html'" style="width: 100px; border:white 2px solid">시작!</button>
+                <button type="button" id="start" class="btn btn-primary text-nowrap" style="width: 100px; border:white 2px solid">시작!</button>
             </div>
         </div>
 
@@ -43,13 +45,17 @@
             let button = document.querySelector("#start");
 		    button.addEventListener("click", () => {
             
+                
 			let input = document.querySelector("#name");
 			let text = input.value;
+
+			if (!text.length) return;
+
             text=text+"님의 모의투자"
 
             localStorage.setItem('user-name',text);
 
-			if (!text.length) return;
+            if(text.length) location.href='stock-simulation.html';
 		});
         </script>
 
@@ -58,12 +64,13 @@
 			    if (window.event.keyCode == 13) {
                     let input = document.querySelector("#name");
 			        let text = input.value;
+                    
+                    if (!text.length) return;
+                    
                     text=text+"님의 모의투자"
                     localStorage.setItem('user-name',text);
-                    
-                    location.href='stock-simulation.html'
 
-			        if (!text.length) return;
+			        if (text.length) location.href='stock-simulation.html';
     		    }
 		}
         </script>     
