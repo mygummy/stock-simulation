@@ -1,10 +1,10 @@
 // 현재 선택중인 주식(name은 주식 이름, chart는 주식 옵션 index)
-let current_stock_name = "삼성전자"
+let current_stock_name = "SS전자"
 let current_stock_chart = 0
 
 // 주식 목록
 let firststock = {
-	name: "삼성전자",
+	name: "SS전자",
 	opening: 60000,
 	past: 60000,
 	current: 60000,
@@ -12,7 +12,7 @@ let firststock = {
 }
 
 let secondstock = {
-	name: "대한항공",
+	name: "KR항공",
 	opening: 20000,
 	past: 20000,
 	current: 20000,
@@ -20,7 +20,7 @@ let secondstock = {
 }
 
 let thirdstock = {
-	name: "현대자동차",
+	name: "HD자동차",
 	opening: 50000,
 	past: 50000,
 	current: 50000,
@@ -28,7 +28,7 @@ let thirdstock = {
 }
 
 let fourthstock = {
-	name: "두산중공업",
+	name: "DS중공업",
 	opening: 40000,
 	past: 40000,
 	current: 40000,
@@ -36,7 +36,7 @@ let fourthstock = {
 }
 
 let fifthstock = {
-	name: "서울우유",
+	name: "SKK우유",
 	opening: 5000,
 	past: 5000,
 	current: 5000,
@@ -44,7 +44,7 @@ let fifthstock = {
 }
 
 let sixthstock = {
-	name: "파리바게트",
+	name: "왕관제빵",
 	opening: 8000,
 	past: 8000,
 	current: 8000,
@@ -52,7 +52,7 @@ let sixthstock = {
 }
 
 let seventhstock = {
-	name: "알촌",
+	name: "BGV영화사",
 	opening: 70000,
 	past: 70000,
 	current: 70000,
@@ -60,7 +60,7 @@ let seventhstock = {
 }
 
 let eighthstock = {
-	name: "이명근떡볶이",
+	name: "한양컴퓨터",
 	opening: 10000,
 	past: 10000,
 	current: 10000,
@@ -68,7 +68,7 @@ let eighthstock = {
 }
 
 let ninthstock = {
-	name: "정돈",
+	name: "튼튼제약",
 	opening: 20000,
 	past: 20000,
 	current: 20000,
@@ -1862,7 +1862,7 @@ $(document).ready(function() {
 			localStorage.setItem('user_sps',user_sp);
 			location.href='dashboard.html';
 		}
-	}, 125);
+	}, 150);
 });
 
 
