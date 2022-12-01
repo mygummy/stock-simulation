@@ -156,6 +156,10 @@ body {
   border: 1px solid rgb(84,130,53);
 }
 
+#stock-table tbody td:nth-child(2), #stock-table tbody td:nth-child(3) {
+  color: rgb(41,167,116);
+}
+
 #stock-table tbody tr.stock:hover td{
   background-color: rgb(197,224,180);
 }

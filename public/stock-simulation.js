@@ -1660,7 +1660,7 @@ $(document).ready(function() {
 			// stock-table 재설정(현재가, 등락)
 			$("#stock1-current").text(firststock.current);
 			$("#stock1-fluctuation").text(firststock.current - firststock.opening);
-
+			
 			$("#stock2-current").text(secondstock.current);
 			$("#stock2-fluctuation").text(secondstock.current - secondstock.opening);
 			
@@ -1684,6 +1684,126 @@ $(document).ready(function() {
 
 			$("#stock9-current").text(ninthstock.current);
 			$("#stock9-fluctuation").text(ninthstock.current - ninthstock.opening);
+			
+
+			// stock-table 숫자 색 재설정
+			if(firststock.current > firststock.opening) {
+				$("#stock1-current").css("color","rgb(206,58,58)");
+				$("#stock1-fluctuation").css("color","rgb(206,58,58)");
+			}
+			else if(firststock.current < firststock.opening) {
+				$("#stock1-current").css("color","rgb(68,114,196)");
+				$("#stock1-fluctuation").css("color","rgb(68,114,196)");
+			}
+			else {
+				$("#stock1-current").css("color","rgb(41,167,116)");
+				$("#stock1-fluctuation").css("color","rgb(41,167,116)");
+			}
+			
+			if(secondstock.current > secondstock.opening) {
+				$("#stock2-current").css("color","rgb(206,58,58)");
+				$("#stock2-fluctuation").css("color","rgb(206,58,58)");
+			}
+			else if(secondstock.current < secondstock.opening) {
+				$("#stock2-current").css("color","rgb(68,114,196)");
+				$("#stock2-fluctuation").css("color","rgb(68,114,196)");
+			}
+			else {
+				$("#stock2-current").css("color","rgb(41,167,116)");
+				$("#stock2-fluctuation").css("color","rgb(41,167,116)");
+			}
+
+			if(thirdstock.current > thirdstock.opening) {
+				$("#stock3-current").css("color","rgb(206,58,58)");
+				$("#stock3-fluctuation").css("color","rgb(206,58,58)");
+			}
+			else if(thirdstock.current < thirdstock.opening) {
+				$("#stock3-current").css("color","rgb(68,114,196)");
+				$("#stock3-fluctuation").css("color","rgb(68,114,196)");
+			}
+			else {
+				$("#stock3-current").css("color","rgb(41,167,116)");
+				$("#stock3-fluctuation").css("color","rgb(41,167,116)");
+			}
+
+			if(fourthstock.current > fourthstock.opening) {
+				$("#stock4-current").css("color","rgb(206,58,58)");
+				$("#stock4-fluctuation").css("color","rgb(206,58,58)");
+			}
+			else if(fourthstock.current < fourthstock.opening) {
+				$("#stock4-current").css("color","rgb(68,114,196)");
+				$("#stock4-fluctuation").css("color","rgb(68,114,196)");
+			}
+			else {
+				$("#stock4-current").css("color","rgb(41,167,116)");
+				$("#stock4-fluctuation").css("color","rgb(41,167,116)");
+			}
+
+			if(fifthstock.current > fifthstock.opening) {
+				$("#stock5-current").css("color","rgb(206,58,58)");
+				$("#stock5-fluctuation").css("color","rgb(206,58,58)");
+			}
+			else if(fifthstock.current < fifthstock.opening) {
+				$("#stock5-current").css("color","rgb(68,114,196)");
+				$("#stock5-fluctuation").css("color","rgb(68,114,196)");
+			}
+			else {
+				$("#stock5-current").css("color","rgb(41,167,116)");
+				$("#stock5-fluctuation").css("color","rgb(41,167,116)");
+			}
+
+			if(sixthstock.current > sixthstock.opening) {
+				$("#stock6-current").css("color","rgb(206,58,58)");
+				$("#stock6-fluctuation").css("color","rgb(206,58,58)");
+			}
+			else if(sixthstock.current < sixthstock.opening) {
+				$("#stock6-current").css("color","rgb(68,114,196)");
+				$("#stock6-fluctuation").css("color","rgb(68,114,196)");
+			}
+			else {
+				$("#stock6-current").css("color","rgb(41,167,116)");
+				$("#stock6-fluctuation").css("color","rgb(41,167,116)");
+			}
+
+			if(seventhstock.current > seventhstock.opening) {
+				$("#stock7-current").css("color","rgb(206,58,58)");
+				$("#stock7-fluctuation").css("color","rgb(206,58,58)");
+			}
+			else if(seventhstock.current < seventhstock.opening) {
+				$("#stock7-current").css("color","rgb(68,114,196)");
+				$("#stock7-fluctuation").css("color","rgb(68,114,196)");
+			}
+			else {
+				$("#stock7-current").css("color","rgb(41,167,116)");
+				$("#stock7-fluctuation").css("color","rgb(41,167,116)");
+			}
+
+			if(eighthstock.current > eighthstock.opening) {
+				$("#stock8-current").css("color","rgb(206,58,58)");
+				$("#stock8-fluctuation").css("color","rgb(206,58,58)");
+			}
+			else if(eighthstock.current < eighthstock.opening) {
+				$("#stock8-current").css("color","rgb(68,114,196)");
+				$("#stock8-fluctuation").css("color","rgb(68,114,196)");
+			}
+			else {
+				$("#stock8-current").css("color","rgb(41,167,116)");
+				$("#stock8-fluctuation").css("color","rgb(41,167,116)");
+			}
+
+			if(ninthstock.current > ninthstock.opening) {
+				$("#stock9-current").css("color","rgb(206,58,58)");
+				$("#stock9-fluctuation").css("color","rgb(206,58,58)");
+			}
+			else if(ninthstock.current < ninthstock.opening) {
+				$("#stock9-current").css("color","rgb(68,114,196)");
+				$("#stock9-fluctuation").css("color","rgb(68,114,196)");
+			}
+			else {
+				$("#stock9-current").css("color","rgb(41,167,116)");
+				$("#stock9-fluctuation").css("color","rgb(41,167,116)");
+			}
+			
 			// 총자산 = 예수금 + 총 매입가 + 총 손익
 			let totalassets = Number($("#depositreceived").text())
 
@@ -1694,6 +1814,21 @@ $(document).ready(function() {
 				let chart_num = $("#user-table > tbody > tr").eq(i).attr("chart");
 				let cells = $("#user-table > tbody > tr")[i].getElementsByTagName("td");
 				cells[1].firstChild.data = stocklist[chart_num].current * userstock[i].num - userstock[i].totalpurchase;
+				
+				// user-table 숫자 색 재설정
+				if(Number(cells[1].firstChild.data) > 0) {
+					$("#user-table > tbody > tr > td:nth-child(2)").eq(i).css("color", "rgb(206,58,58)");
+					$("#user-table > tbody > tr > td:nth-child(4)").eq(i).css("color", "rgb(206,58,58)");
+				}
+				else if(Number(cells[1].firstChild.data) < 0) {
+					$("#user-table > tbody > tr > td:nth-child(2)").eq(i).css("color", "rgb(68,114,196)");
+					$("#user-table > tbody > tr > td:nth-child(4)").eq(i).css("color", "rgb(68,114,196)");
+				}
+				else {
+					$("#user-table > tbody > tr > td:nth-child(2)").eq(i).css("color", "rgb(41,167,116)");
+					$("#user-table > tbody > tr > td:nth-child(4)").eq(i).css("color", "rgb(41,167,116)");
+				}
+
 				// 총자산 추가
 				totalassets += Number(cells[1].firstChild.data);
 				totalassets += userstock[i].totalpurchase;
@@ -1710,8 +1845,21 @@ $(document).ready(function() {
 		}
 
 		if(cnt / 10 == 39) {
-			console.log("끝");
+			// 시간이 다 되었을 때, dashboard.html로 넘어감
+			alert("시간 종료!");
 			clearInterval(timer);
+
+			// dashboard.html 연결 + localStorage로 data 보내기
+			let name = $("#name-of-user").text();
+			let money = Number($("#totalassets").text());
+			name = name.substring(0, -7)
+			let user_sp = {
+				name: name,
+				money: money,
+				rate: (money / 10000).toFixed(2),
+			}
+			localStorage.setItem('user_sps',user_sp);
+			location.href='dashboard.html';
 		}
 	}, 125);
 });
@@ -1788,7 +1936,7 @@ $(".buy").on("click", function() {
 		}
 		userstock.push(purchase_stock);
 
-		$("#user-table > tbody:last").append("<tr class=\"stock\" name=" + current_stock_name + " chart=" + current_stock_chart + "><td>" + current_stock_name + "</td><td>" + 0 + "</td><td>" + num + "</td><td>" + purchase + "</td></tr>");
+		$("#user-table > tbody:last").append("<tr class=\"stock\" name=" + current_stock_name + " chart=" + current_stock_chart + "><td>" + current_stock_name + "</td><td class=\"profit\">" + 0 + "</td><td>" + num + "</td><td class=\"purchase\">" + purchase + "</td></tr>");
 
 	} else {
 		userstock[index].totalpurchase += purchase * num;
