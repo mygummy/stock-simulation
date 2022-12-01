@@ -36,3 +36,47 @@ npm install apexcharts --save
 중요! public 파일 문제(해결완료)
 현재 stock-simulation.html이 node_modules를 못 읽어오는 중
 - public 추가 전 깃허브 리포지토리와 비교했을 때, public에 없는 파일: .gitignore / LICENSE / README.md / main.js / package-lock.json / package.json
+
+
+//README.md 최종본 (작성 중)
+The name of app: 내일은 주식왕!
+
+Screenshots of your app: 매매 사진 업로드
+
+Youtube link: 여기에 쓸 것
+
+How to install
+1. public 파일 다운로드
+2. index.html 실행 전 다음 2개의 명령어를 쳐야 함
+npm install jquery --save
+npm install apexcharts --save
+
+How to play:
+1. public 파일 안에 있는 index.html 실행
+2. '게임 방법' 버튼을 클릭해서 게임 방법을 익힌 뒤 '이전으로' 버튼을 눌러서 이전 화면으로 돌아온다.
+3. 자신의 이름을 작성한 후 '시작!' 버튼을 누른다.
+4. 제한 시간 동안 주식을 매매하여 총자산을 늘리자!
+5. 제한 시간이 지나면 시간 종료 알림이 뜨면서 랭킹 화면으로 넘어간다.
+6. 랭킹 화면에서 자신의 최종 총자산과 수익률을 볼 수 있다.
+7. 화면 하단의 '랭킹제출/submit'버튼을 눌러 랭킹에 자신의 투자 결과를 등록할 수 있다. 우측에서 수익률 상위 5명의 투자 결과를 확인할 수 있다.
+8. '다시시작/retry'버튼을 눌러 게임을 다시 플레이 할 수 있다. 
+
+Example: 실행 화면 사진을 보여주자
+
+Documentation:
+
+index.html: 게임의 시작 화면을 보여주는 html 파일
+manual.html: 게임 방법을 알려주는 html 파일
+stock-simulation.html: 주식 매매가 이루어지는 html 파일
+dashboard.html: 게임 결과를 알려주는 html 파일
+
+stock-simulation.js: 주식을 매매할 수 있는 함수, 버튼의 기능을 구현해놓은 javascript 파일
+
+start_screen_style.css: index.html의 디자인
+manual_style.css: manual.html의 화면 디자인
+style: stock-simulation.html의 디자인
+style_dash: dashboard.html의 디자인
+
+thumbnail.png: 앱의 썸네일 사진
+startbackground.png: index.html의 배경화면 사진
+manual.png: 게임 방법을 설명하는 사진
