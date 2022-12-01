@@ -415,6 +415,8 @@ function findUserTableIndex(name) {
 	return index;
 }
 
+
+// 시작시, timer 설정
 $(document).ready(function() {
 	chart.render();
 
@@ -489,6 +491,7 @@ $(".stock").on("click", function() {
 	showChart(current_stock_chart);
 });
 
+
 // user-table 행 클릭시(행이 동적 할당되기 때문에 따로 함수를 만듬)
 $("#user-table-body").on("click", ".stock", function() {
 	let name = $(this).attr("name");
@@ -502,6 +505,7 @@ $("#user-table-body").on("click", ".stock", function() {
 })
 
 
+// - 버튼 클릭시
 $(".minus").on("click", function() {
 	let num = Number($("#quantity").val());
 	if(isNaN(num)) num = 0;
@@ -510,6 +514,8 @@ $(".minus").on("click", function() {
 
 });
 
+
+// + 버튼 클릭시
 $(".plus").on("click", function() {
 	let num = Number($("#quantity").val());
 	if(isNaN(num)) num = 0;
@@ -518,6 +524,8 @@ $(".plus").on("click", function() {
 	$("#quantity").val(num);
 });
 
+
+// 매수 버튼 클릭시
 $(".buy").on("click", function() {
 	let num = Number($("#quantity").val());
 
@@ -525,6 +533,13 @@ $(".buy").on("click", function() {
 	let purchase = stocklist[current_stock_chart].current;
 	let index = findIndex(current_stock_name);
 	
+	// 매수 가격이 예수금을 초과할 경우
+	if(Number($("#depositreceived").text()) < purchase * num) {
+		// 안내창 띄우기
+		$("#guide").text(current_stock_name + " 주식의 매수가격이 예수금을 초과했습니다!");
+		return;
+	}
+
 	// 매수한 주식 종목이 없을 경우
 	if(index == -1) {
 		let purchase_stock = {
@@ -557,10 +572,64 @@ $(".buy").on("click", function() {
 	// 수량을 0으로 해야함
 	$("#quantity").val(0);
 	showChart(current_stock_chart);
+
+	// 매수가 정상적으로 이루어졌다면 guide msg 삭제
+	$("#guide").text("");
+
 });
 
+
+// 매도 버튼 클릭시
 $(".sell").on("click", function() {
-	console.log(userstock);
+	let num = Number($("#quantity").val());
 	
+	if(num == 0) return;
+	let sell = stocklist[current_stock_chart].current;
+	let index = findIndex(current_stock_name);
 	
-})
+	// 매도할 주식 종목이 user-table에 없을 경우
+	if(index == -1) {
+		// 안내창 띄우기
+		$("#guide").text(current_stock_name + " 주식은 현재 보유하고 있는 주식이 아닙니다.");
+		return;
+	} 
+
+	// 매도할 주식 수량이 현재 보유중인 주식 수량을 초과할 경우
+	if(num > userstock[index].num) {
+		// 안내창 띄우기
+		$("#guide").text(current_stock_name + " 주식의 보유 수량을 초과했습니다!");
+		return;
+	}
+	// 매도할 주식 수량이 현재 보유중인 주식 수량보다 작을 경우(수량이 남는 경우)
+	else if(num < userstock[index].num) {
+		userstock[index].totalpurchase -= sell * num;
+		userstock[index].num -= num;
+		let table_index = findUserTableIndex(current_stock_name);
+		
+		// user-table 재설정(수량, 매입가)
+		let cells = $("#user-table > tbody > tr")[table_index].getElementsByTagName("td");
+		cells[2].firstChild.data = userstock[index].num;
+		cells[3].firstChild.data = Math.floor(userstock[index].totalpurchase / userstock[index].num);
+	}
+	// 매도할 주식 수량이 현재 보유중인 주식 수량과 같을 경우(수량이 딱 맞는 경우 배열, 테이블 값 삭제 해주어야 함)
+	else {
+		// userstock에 해당 주식 삭제
+		userstock.splice(index, 1);
+		// 해당 주식 행 삭제
+		let table_index = findUserTableIndex(current_stock_name);
+		$("#user-table > tbody tr").eq(table_index).remove();
+	}
+
+	// 예수금 증가
+	let depositreceived = Number($("#depositreceived").text());
+	depositreceived += sell * num;
+	$("#depositreceived").text(depositreceived);
+
+	// 수량을 0으로 해야함
+	$("#quantity").val(0);
+	showChart(current_stock_chart);
+
+	// 매도가 정상적으로 이루어졌다면 guide msg 삭제
+	$("#guide").text("");
+
+});

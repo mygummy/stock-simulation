@@ -281,3 +281,6 @@ body {
   grid-row: 4 / 5;
 }
 
+.guidediv {
+  font-size: 30px;
+}
