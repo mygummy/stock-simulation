@@ -110,10 +110,25 @@ body {
   border: 1px solid rgb(84,130,53);
   box-shadow: 3px 3px gray;
   font-size: 20px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.leftdiv-item::-webkit-scrollbar {
+  width: 0px;
+}
+
+.leftdiv-item::-webkit-thumb {
+  background: rgba(255,255,255,1);
+}
+
+.leftdiv-item::-webkit-track {
+  background: rgba(255,255,255,1);
 }
 
 #stock-table {
   width: 300px;
+  height: 400px;
   border-collapse: collapse;
 }
 
@@ -158,6 +173,20 @@ body {
   border: 1px solid rgb(84,130,53);
   box-shadow: 3px 3px gray;
   font-size: 20px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.rightdiv-item::-webkit-scrollbar {
+  width: 0px;
+}
+
+.rightdiv-item::-webkit-thumb {
+  background: rgba(255,255,255,1);
+}
+
+.rightdiv-item::-webkit-track {
+  background: rgba(255,255,255,1);
 }
 
 #user-table {
