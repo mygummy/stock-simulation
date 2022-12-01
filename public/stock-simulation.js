@@ -1840,7 +1840,8 @@ $(document).ready(function() {
 			let hour = options1.series[0].data[index + 1].x.getHours();
 			let min = options1.series[0].data[index + 1].x.getMinutes();
 
-			$("#currenttime").text(hour + ":" + min);
+			if(min == 0) $("#currenttime").text(hour + ":00");
+			else $("#currenttime").text(hour + ":" + min);
 			showChart(current_stock_chart);
 		}
 

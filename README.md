@@ -21,9 +21,10 @@ npm install apexcharts --save
 - 예수금: 주식을 매수 / 매도 했을 때 변동
 - 수량 조정: 매수 금액이 예수금을 넘길 경우 어떻게 할 것인가?
 - 수량 조정: 매도 수량이 해당 주식 보유 수량보다 많을 경우 어떻게 할 것인가?
-
-해결해야 할 것
 - stock-table 색상 추가
+
+해결해야할 것
+- stock-simulation.html에서 dashboard.html로 데이터 전달
 
 시작 페이지에 추가한 내용
 - 시작 페이지 작성 완료
