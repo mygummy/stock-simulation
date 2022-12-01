@@ -35,7 +35,7 @@
             </div>
             <div class="pt-5">
                 <button type="button" id="back" class="btn btn-danger text-nowrap" onclick="location.href='manual.html'" style="width: 100px; border:white 2px solid">게임 방법</button>
-                <button type="button" id="start" class="btn btn-primary text-nowrap" onclick="location.href='stock-simulation.html'" style="width: 100px; border:white 2px solid">시작!</button>
+                <button type="button" id="start" class="btn btn-primary text-nowrap" style="width: 100px; border:white 2px solid">시작!</button>
             </div>
         </div>
 
@@ -43,13 +43,17 @@
             let button = document.querySelector("#start");
 		    button.addEventListener("click", () => {
             
+                
 			let input = document.querySelector("#name");
 			let text = input.value;
+
+			if (!text.length) return;
+
             text=text+"님의 모의투자"
 
             localStorage.setItem('user-name',text);
 
-			if (!text.length) return;
+            if(text.length) location.href='stock-simulation.html';
 		});
         </script>
 
@@ -58,12 +62,13 @@
 			    if (window.event.keyCode == 13) {
                     let input = document.querySelector("#name");
 			        let text = input.value;
+                    
+                    if (!text.length) return;
+                    
                     text=text+"님의 모의투자"
                     localStorage.setItem('user-name',text);
-                    
-                    location.href='stock-simulation.html'
 
-			        if (!text.length) return;
+			        if (text.length) location.href='stock-simulation.html';
     		    }
 		}
         </script>     
