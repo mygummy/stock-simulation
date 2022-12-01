@@ -65,18 +65,15 @@ Example: 실행 화면 사진을 보여주자
 
 Documentation:
 
-index.html: 게임의 시작 화면을 보여주는 html 파일
-manual.html: 게임 방법을 알려주는 html 파일
-stock-simulation.html: 주식 매매가 이루어지는 html 파일
-dashboard.html: 게임 결과를 알려주는 html 파일
-
-stock-simulation.js: 주식을 매매할 수 있는 함수, 버튼의 기능을 구현해놓은 javascript 파일
-
-start_screen_style.css: index.html의 디자인
-manual_style.css: manual.html의 화면 디자인
-style: stock-simulation.html의 디자인
-style_dash: dashboard.html의 디자인
-
-thumbnail.png: 앱의 썸네일 사진
-startbackground.png: index.html의 배경화면 사진
-manual.png: 게임 방법을 설명하는 사진
+1. index.html: 게임의 시작 화면을 보여주는 html 파일
+2. manual.html: 게임 방법을 알려주는 html 파일
+3. stock-simulation.html: 주식 매매가 이루어지는 html 파일
+4. dashboard.html: 게임 결과를 알려주는 html 파일
+5. stock-simulation.js: 주식을 매매할 수 있는 함수, 버튼의 기능을 구현해놓은 javascript 파일
+6. start_screen_style.css: index.html의 디자인
+7. manual_style.css: manual.html의 화면 디자인
+8. style: stock-simulation.html의 디자인
+9. style_dash: dashboard.html의 디자인
+10. thumbnail.png: 앱의 썸네일 사진
+11. startbackground.png: index.html의 배경화면 사진
+12. manual.png: 게임 방법을 설명하는 사진
