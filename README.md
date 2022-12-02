@@ -3,11 +3,11 @@ ossp final project
 
 **The name of app:** 내일은 주식왕!
 
-**Youtube link:** 여기에 쓸 것
+**Youtube link:** https://www.youtube.com/watch?v=7F6TOuYpI2E
 
 **How to install**
 1. docs 파일 다운로드
-2. index.html 실행 전 다음 2개의 명령어를 쳐야 함
+2. index.html 실행 전 다음 2개의 명령어를 써야 합니다.
 
 npm install jquery --save
 
