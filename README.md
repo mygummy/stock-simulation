@@ -55,6 +55,7 @@ npm install apexcharts --save
 <img width="1280" alt="in-game" src="https://user-images.githubusercontent.com/113420520/205117045-bf783813-6c48-4fd7-869d-314f36bf0110.png">
 
 ###랭킹 화면###
+<img width="1280" alt="dashboard" src="https://user-images.githubusercontent.com/113420520/205220000-b45e0db1-d44f-4e78-ba9e-b64b71cf256f.png">
 
 </div>
 
@@ -78,7 +79,7 @@ npm install apexcharts --save
 7. 우측에서 수익률 상위 5명의 투자 결과를 확인할 수 있다.
 8. '다시시작/retry'버튼을 눌러 게임을 다시 플레이 할 수 있다. 
 
-**Example:** 실행 화면 사진을 보여주자
+**Example:** 실행 화면 사진
 1. 예수금을 초과하는 금액의 주식을 구매하면 예수금을 초과했다는 메시지가 출력되며 주식 매수를 할 수 없다.
 <img width="1280" alt="dashboard" src="https://user-images.githubusercontent.com/113420520/205217686-ebf2feec-f665-4999-854d-ce61f5c3fa2f.png">
 
