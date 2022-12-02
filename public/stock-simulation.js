@@ -1852,19 +1852,19 @@ $(document).ready(function() {
 
 			// dashboard.html 연결 + localStorage로 data 보내기
 			let name = $("#name-of-user").text();
-			console.log(name);
+
 			let money = Number($("#totalassets").text());
 			name = name.slice(0, -7)
-			console.log(name);
+
 			let user_sp = {
 				name: name,
 				money: money,
-				rate: (money / 10000).toFixed(2),
+				rate: ((money / 10000)-100).toFixed(2),
 			}
 			localStorage.setItem('user_sps',JSON.stringify( user_sp ));
 			location.href='dashboard.html';
 		}
-	}, 5);
+	}, 150);
 });
 
 // stock-table 행 클릭시

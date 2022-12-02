@@ -24,12 +24,12 @@
         </div>
         <div class="ratediv">
           <div class="ratediv-item">
-            <div class="name_txt">손익률</div>          
+            <div class="name_txt">수익률(%)</div>          
           </div>
         </div>
         <div class="ratenumdiv">
           <div class="ratenumdiv-item">
-            <div id="rate_num" class="name_txt">손익률</div>
+            <div id="rate_num" class="name_txt">수익률</div>
           </div>
         </div>
           <div class="rightdiv">
@@ -42,7 +42,7 @@
                   <tr>
                     <th>이름</th>
                     <th>총자산</th>
-                    <th>손익률</th>
+                    <th>수익률(%)</th>
                   </tr>
                 </thead>
                 <tbody id="ranktata" >
@@ -76,7 +76,7 @@
             </div>
           </div>
           <div class="buttondiv">
-            <button class="retrybutton" onclick="location.href='index.html'">다시시작/retry</button>
+            <button class="retrybutton" onclick="location.href='index.html'">다시 시작/retry</button>
           </div>
       </div>
     </div>
@@ -84,7 +84,6 @@
   <script>
     if(localStorage.getItem('user-name')){
       let lastData = localStorage.getItem('user-name')
-      console.log(lastData)
       document.getElementById("name-of-user").innerHTML = lastData;
     }
   </script>
@@ -118,7 +117,7 @@
 
     function loadRank() {
       let lastRank = localStorage.getItem("ranks");
-      console.log(lastRank);
+
       if (lastRank === null){ 
         let datas = JSON.parse(localStorage.getItem('user_sps')); 
         ranks.push(datas);
@@ -127,7 +126,6 @@
         return 0;
       }
 
-      console.log(JSON.parse(lastRank));
       ranks = JSON.parse(lastRank);
       let datas = JSON.parse(localStorage.getItem('user_sps'));
       let idx = ranks.length
@@ -140,8 +138,8 @@
           break;
         }
       }
-      saveRank()
 
+      saveRank()
 
       if(ranks.length >= 5){
         ranks = ranks.slice(0,5);
@@ -151,7 +149,6 @@
     }
 
     function saveRank() {
-      console.log("aa")
       localStorage.setItem("ranks", JSON.stringify(ranks));
     }
 
@@ -167,6 +164,14 @@
       td_1.innerText = rank['name'];
       td_2.innerText = rank['money'];
       td_3.innerText = rank['rate'];
+
+      if(parseFloat(rank['rate'])>0){
+        td_3.innerText = "+"+td_3.innerText;
+        td_3.style.color="rgb(206,58,58)";
+      }
+      else if(parseFloat(rank['rate'])<0){
+        td_3.style.color="rgb(68,114,196)";
+      }
       tr.appendChild(td_1);
       tr.appendChild(td_2);
       tr.appendChild(td_3);
@@ -177,12 +182,19 @@
 			loadRank();
 		});
 
-
-
     if (localStorage.getItem('user_sps')) {
       let datas = JSON.parse( localStorage.getItem('user_sps') );
       document.getElementById("cost_num").innerText = datas['money'];
-      document.getElementById("rate_num").innerHTML = datas['rate'];    
+      document.getElementById("rate_num").innerHTML = datas['rate'];      
+
+      if(datas['rate'] > 0){
+        document.getElementById("rate_num").style.color= "rgb(206,58,58)"
+        document.getElementById("rate_num").innerHTML = "+"+datas['rate'];
+      }
+      else if(datas['rate'] < 0){
+        document.getElementById("rate_num").style.color= "rgb(68,114,196)";
+      }    
+
     }
 
     // if (localStorage.getItem('user_sps')) {
@@ -191,13 +203,6 @@
     //     ranks.push(datas)
     //   }
     // }
-
-
-
-
-
-
-
+    //localStorage.clear();
   </script>
-
 </html>
