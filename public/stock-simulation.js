@@ -1609,7 +1609,7 @@ $(document).ready(function() {
 	let timer = setInterval(function() {
 		cnt++;
 		
-		if(cnt % 10 == 0) {
+		if(cnt % 10 == 0 && cnt / 10 <= 39) {
 			let index = cnt / 10;
 			// 차트 재설정
 			let random = Math.floor(Math.random() * 21) - 10;
@@ -1836,6 +1836,11 @@ $(document).ready(function() {
 			// 총자산 재설정
 			$("#totalassets").text(totalassets);
 			
+			
+		}
+		
+		if(cnt % 10 == 0 && cnt / 10 <= 39) {
+			let index = cnt / 10;
 			// 현재 시간 재설정
 			let hour = options1.series[0].data[index + 1].x.getHours();
 			let min = options1.series[0].data[index + 1].x.getMinutes();
@@ -1845,17 +1850,16 @@ $(document).ready(function() {
 			showChart(current_stock_chart);
 		}
 
-		if(cnt / 10 == 39) {
+		if(cnt / 10 == 40) {
 			// 시간이 다 되었을 때, dashboard.html로 넘어감
 			alert("시간 종료!");
 			clearInterval(timer);
 
 			// dashboard.html 연결 + localStorage로 data 보내기
 			let name = $("#name-of-user").text();
-			console.log(name);
 			let money = Number($("#totalassets").text());
 			name = name.slice(0, -7)
-			console.log(name);
+			
 			let user_sp = {
 				name: name,
 				money: money,
@@ -1864,7 +1868,7 @@ $(document).ready(function() {
 			localStorage.setItem('user_sps',user_sp);
 			// location.href='dashboard.html';
 		}
-	}, 125);
+	}, 10);
 });
 
 // stock-table 행 클릭시
