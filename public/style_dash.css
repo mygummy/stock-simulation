@@ -10,15 +10,23 @@ body {
   background-color: rgb(230,255,255);
   text-align: center;
 }
+
+.container {
+  position: relative;
+  width: 1020px;
+  margin: auto;
+  margin-top: 50px;
+}
+
 .title{
-  grid-column: 2/4;
+  grid-column: 1/2;
   grid-row: 2/3;
 }
 .grid {
-    width: 1280px;
+    width: 1020px;
     height: 720px;
     display: grid;
-    grid-template-columns: 260px 260px 440px 320px;
+    grid-template-columns: 260px 440px 320px;
     grid-template-rows: 80px 80px 240px 160px 80px 80px;
 }
 .name_txt{
@@ -29,7 +37,7 @@ body {
 }
 
 .buttondiv{
-  grid-column: 3 / 4;
+  grid-column: 2 / 3;
   grid-row: 6 / 7;
   display: flex;
 }
@@ -49,7 +57,7 @@ body {
 }
 
 .costdiv{
-  grid-column: 2 / 3;
+  grid-column: 1 / 2;
   grid-row: 3 / 4;  
 }
 
@@ -64,7 +72,7 @@ body {
 }
 
 .costnumdiv{
-  grid-column: 3 / 4;
+  grid-column: 2 / 3;
   grid-row: 3 / 4;  
 }
 
@@ -80,7 +88,7 @@ body {
 
 
 .ratediv{
-  grid-column: 2 / 3;
+  grid-column: 1 / 2;
   grid-row: 4 / 6;  
 }
 
@@ -96,7 +104,7 @@ body {
 
 
 .ratenumdiv{
-  grid-column: 3 / 4;
+  grid-column: 2 / 3;
   grid-row: 4 / 6;  
 }
 
@@ -115,7 +123,7 @@ body {
 
 
 .rightdiv {
-    grid-column: 4 / 5;
+    grid-column: 3 / 4;
     grid-row: 3 / 7;
 }
 
@@ -140,7 +148,7 @@ body {
   box-shadow: 3px 3px grey;
   font-size: 25px;
   line-height: 60px;
-  grid-column: 4/5;
+  grid-column: 3/4;
   grid-row: 6/7
 }
 
@@ -155,7 +163,7 @@ body {
   box-shadow: 3px 3px grey;
   font-size: 25px;
   line-height: 60px;
-  grid-column: 4/5;
+  grid-column: 3/4;
   grid-row: 6/7
 }
 

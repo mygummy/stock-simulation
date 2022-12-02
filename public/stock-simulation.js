@@ -1615,46 +1615,55 @@ $(document).ready(function() {
 			let random = Math.floor(Math.random() * 21) - 10;
 			firststock.past = firststock.current;
 			firststock.current = firststock.current + firststock.unit * random;
+			if(firststock.current < 0) firststock.current = 0;
 			options1.series[0].data[index + 1].y = [firststock.past, firststock.past, firststock.current, firststock.current]
 
 			random = Math.floor(Math.random() * 21) - 10;
 			secondstock.past = secondstock.current;
 			secondstock.current = secondstock.current + secondstock.unit * random;
+			if(secondstock.current < 0) secondstock.current = 0;
 			options2.series[0].data[index + 1].y = [secondstock.past, secondstock.past, secondstock.current, secondstock.current]
 			
 			random = Math.floor(Math.random() * 21) - 10;
 			thirdstock.past = thirdstock.current;
 			thirdstock.current = thirdstock.current + thirdstock.unit * random;
+			if(thirdstock.current < 0) thirdstock.current = 0;
 			options3.series[0].data[index + 1].y = [thirdstock.past, thirdstock.past, thirdstock.current, thirdstock.current]
 
 			random = Math.floor(Math.random() * 21) - 10;
 			fourthstock.past = fourthstock.current;
 			fourthstock.current = fourthstock.current + fourthstock.unit * random;
+			if(fourthstock.current < 0) fourthstock.current = 0;
 			options4.series[0].data[index + 1].y = [fourthstock.past, fourthstock.past, fourthstock.current, fourthstock.current]
 			
 			random = Math.floor(Math.random() * 21) - 10;
 			fifthstock.past = fifthstock.current;
 			fifthstock.current = fifthstock.current + fifthstock.unit * random;
+			if(fifthstock.current < 0) fifthstock.current = 0;
 			options5.series[0].data[index + 1].y = [fifthstock.past, fifthstock.past, fifthstock.current, fifthstock.current]
 
 			random = Math.floor(Math.random() * 21) - 10;
 			sixthstock.past = sixthstock.current;
 			sixthstock.current = sixthstock.current + sixthstock.unit * random;
+			if(sixthstock.current < 0) sixthstock.current = 0;
 			options6.series[0].data[index + 1].y = [sixthstock.past, sixthstock.past, sixthstock.current, sixthstock.current]
 			
 			random = Math.floor(Math.random() * 21) - 10;
 			seventhstock.past = seventhstock.current;
 			seventhstock.current = seventhstock.current + seventhstock.unit * random;
+			if(seventhstock.current < 0) seventhstock.current = 0;
 			options7.series[0].data[index + 1].y = [seventhstock.past, seventhstock.past, seventhstock.current, seventhstock.current]
 			
 			random = Math.floor(Math.random() * 21) - 10;
 			eighthstock.past = eighthstock.current;
 			eighthstock.current = eighthstock.current + eighthstock.unit * random;
+			if(eighthstock.current < 0) eighthstock.current = 0;
 			options8.series[0].data[index + 1].y = [eighthstock.past, eighthstock.past, eighthstock.current, eighthstock.current]
 			
 			random = Math.floor(Math.random() * 21) - 10;
 			ninthstock.past = ninthstock.current;
 			ninthstock.current = ninthstock.current + ninthstock.unit * random;
+			if(ninthstock.current < 0) ninthstock.current = 0;
 			options9.series[0].data[index + 1].y = [ninthstock.past, ninthstock.past, ninthstock.current, ninthstock.current]
 
 			// stock-table 재설정(현재가, 등락)
@@ -1992,7 +2001,8 @@ $(".sell").on("click", function() {
 	}
 	// 매도할 주식 수량이 현재 보유중인 주식 수량보다 작을 경우(수량이 남는 경우)
 	else if(num < userstock[index].num) {
-		userstock[index].totalpurchase -= sell * num;
+		let tmp = userstock[index].num
+		userstock[index].totalpurchase = userstock[index].totalpurchase * (1 - num / tmp);
 		userstock[index].num -= num;
 		let table_index = findUserTableIndex(current_stock_name);
 		
