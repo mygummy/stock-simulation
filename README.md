@@ -42,23 +42,6 @@ npm install apexcharts --save
 
 **The name of app:** 내일은 주식왕!
 
-**Screenshots of your app:**
-
-<div align=center>
-###시작 화면###
-<img width="1280" alt="start" src="https://user-images.githubusercontent.com/113420520/205119162-0dddb34f-ceb5-4ebb-9d2f-93672fa95a66.png">
-  
-###게임 설명 화면###
-<img width="1280" alt="manual" src="https://user-images.githubusercontent.com/113420520/205119279-6df49506-2108-4089-8524-f533fdbf7b35.png">
-  
-###주식 매매 화면###
-<img width="1280" alt="in-game" src="https://user-images.githubusercontent.com/113420520/205117045-bf783813-6c48-4fd7-869d-314f36bf0110.png">
-
-###랭킹 화면###
-<img width="1280" alt="dashboard" src="https://user-images.githubusercontent.com/113420520/205220000-b45e0db1-d44f-4e78-ba9e-b64b71cf256f.png">
-
-</div>
-
 **Youtube link:** 여기에 쓸 것
 
 **How to install**
@@ -78,6 +61,23 @@ npm install apexcharts --save
 6. 랭킹 화면에서 자신의 최종 총자산과 수익률을 볼 수 있다.
 7. 우측에서 수익률 상위 5명의 투자 결과를 확인할 수 있다.
 8. '다시시작/retry'버튼을 눌러 게임을 다시 플레이 할 수 있다. 
+
+**Screenshots of your app:**
+
+<div align=center>
+###시작 화면###
+<img width="1280" alt="start" src="https://user-images.githubusercontent.com/113420520/205119162-0dddb34f-ceb5-4ebb-9d2f-93672fa95a66.png">
+  
+###게임 설명 화면###
+<img width="1280" alt="manual" src="https://user-images.githubusercontent.com/113420520/205119279-6df49506-2108-4089-8524-f533fdbf7b35.png">
+  
+###주식 매매 화면###
+<img width="1280" alt="in-game" src="https://user-images.githubusercontent.com/113420520/205117045-bf783813-6c48-4fd7-869d-314f36bf0110.png">
+
+###랭킹 화면###
+<img width="1280" alt="dashboard" src="https://user-images.githubusercontent.com/113420520/205220000-b45e0db1-d44f-4e78-ba9e-b64b71cf256f.png">
+
+</div>
 
 **Example:** 실행 예시
 1. 예수금을 초과하는 금액의 주식을 구매하면 예수금을 초과했다는 메시지가 출력되며 주식 매수를 할 수 없다.
