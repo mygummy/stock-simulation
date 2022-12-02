@@ -6,8 +6,8 @@ ossp final project
 **Youtube link:** https://www.youtube.com/watch?v=7F6TOuYpI2E
 
 **How to install**
-1. docs 파일 다운로드
-2. index.html 실행 전 다음 2개의 명령어를 써야 합니다.
+1. stock-simulation-main 다운로드 후 압축 풀기
+2. 압축 해제 폴더에서 docs 파일 내 index.html 실행 전에 다음 2개의 명령어를 써야 합니다.
 
 npm install jquery --save
 
