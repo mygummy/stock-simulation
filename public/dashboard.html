@@ -24,12 +24,12 @@
         </div>
         <div class="ratediv">
           <div class="ratediv-item">
-            <div class="name_txt">손익률</div>          
+            <div class="name_txt">수익률(%)</div>          
           </div>
         </div>
         <div class="ratenumdiv">
           <div class="ratenumdiv-item">
-            <div id="rate_num" class="name_txt">손익률</div>
+            <div id="rate_num" class="name_txt">수익률</div>
           </div>
         </div>
           <div class="rightdiv">
@@ -42,41 +42,17 @@
                   <tr>
                     <th>이름</th>
                     <th>총자산</th>
-                    <th>손익률</th>
+                    <th>수익률(%)</th>
                   </tr>
                 </thead>
                 <tbody id="ranktata" >
-                  <!-- <tr id="rank0" name="000" rank="0" class="rank">
-                    <td id="user-name"></td>
-                    <td id="user-money"></td>
-                    <td id="increase_rate"></td>
-                  </tr>
-                  <tr id="rank1" name="???" chart="0" class="rank">
-                    <td id="user-name"></td>
-                    <td id="user-money"></td>
-                    <td id="increase_rate"></td>
-                  </tr>
-                  <tr id="rank2" name="???" chart="0" class="rank">
-                    <td id="user-name"></td>
-                    <td id="user-money"></td>
-                    <td id="increase_rate"></td>
-                  </tr>
-                  <tr id="rank3" name="???" chart="0" class="rank">
-                    <td id="user-name"></td>
-                    <td id="user-money"></td>
-                    <td id="increase_rate"></td>
-                  </tr>
-                  <tr id="rank4" name="???" chart="0" class="rank">
-                    <td id="user-name"></td>
-                    <td id="user-money"></td>
-                    <td id="increase_rate"></td>
-                  </tr> -->
+
                 </tbody>
               </table>
             </div>
           </div>
           <div class="buttondiv">
-            <button class="retrybutton" onclick="location.href='index.html'">다시시작/retry</button>
+            <button class="retrybutton" onclick="location.href='index.html'">다시 시작/retry</button>
           </div>
       </div>
     </div>
@@ -84,51 +60,54 @@
   <script>
     if(localStorage.getItem('user-name')){
       let lastData = localStorage.getItem('user-name')
-      console.log(lastData)
       document.getElementById("name-of-user").innerHTML = lastData;
+      document.getElementById("name-of-user").innerHTML = document.getElementById("name-of-user").innerHTML+" 결과"
     }
   </script>
 
-  
-  <!-- <script>
-    function loadrank() {
-          fetch("/user_sps", { method: "GET" })
-              .then((res) => res.json())
-              .then((user_sps) => {
-                  let list = document.getElementById("tbody");
-                  list.innerHTML = "";
-                  user_sps.forEach(user_sp => {
-                      let th = document.createElement("th");
-                      let td_1 = document.createElement("td");
-                      let td_2 = document.createElement("td");
-                      let td_3 = document.createElement("td");
-                      td_1.innerText = user_sp.nam;
-                      td_2.innerText = user_sp.mon;
-                      td_3.innerText = user_sp.rat;
-                      th.appendChild(td_1);
-                      th.appendChild(td_2);
-                      th.appendChild(td_3);
-                      list.appendChild(th);
-                  })
-              })
-      }
-  </script> -->
   <script>
     let ranks = []
-
+    let i = 0;
     function loadRank() {
       let lastRank = localStorage.getItem("ranks");
-      if (!lastRank) return;
-      ranks =JSON.parse(lastRank);
-      if(ranks.length <= 5){
+
+      if (lastRank === null){ 
         let datas = JSON.parse(localStorage.getItem('user_sps')); 
         ranks.push(datas);
-        saveRank();
+        ranks.forEach(addToList);
+        saveRank()
+        return 0;
       }
 
+      ranks = JSON.parse(lastRank);
+      let datas = JSON.parse(localStorage.getItem('user_sps'));
+      let idx = ranks.length
+      let ok = 0;
+      for(i = 0; i < idx; i++){
+        if (datas['money'] <= ranks[i]['money']){
+          continue;
+        }
+        else{
+          ranks.splice(i,0,datas);
+          ok = 1;
+          break;
+        }
+      }
+
+      if(i === idx && ok !== 1){
+        console.log("1");
+          ranks.push(datas);
+      }
+
+      saveRank()
+
+      if(ranks.length >= 5){
+        ranks = ranks.slice(0,5);
+        saveRank()
+      } 
       ranks.forEach(addToList);
     }
-    
+
     function saveRank() {
       localStorage.setItem("ranks", JSON.stringify(ranks));
     }
@@ -145,6 +124,14 @@
       td_1.innerText = rank['name'];
       td_2.innerText = rank['money'];
       td_3.innerText = rank['rate'];
+
+      if(parseFloat(rank['rate'])>0){
+        td_3.innerText = "+"+td_3.innerText;
+        td_3.style.color="rgb(206,58,58)";
+      }
+      else if(parseFloat(rank['rate'])<0){
+        td_3.style.color="rgb(68,114,196)";
+      }
       tr.appendChild(td_1);
       tr.appendChild(td_2);
       tr.appendChild(td_3);
@@ -155,28 +142,19 @@
 			loadRank();
 		});
 
-
-
-    localStorage.setItem('ranks',JSON.stringify(ranks))
     if (localStorage.getItem('user_sps')) {
       let datas = JSON.parse( localStorage.getItem('user_sps') );
       document.getElementById("cost_num").innerText = datas['money'];
-      document.getElementById("rate_num").innerHTML = datas['rate'];    
+      document.getElementById("rate_num").innerHTML = datas['rate'];      
+
+      if(datas['rate'] > 0){
+        document.getElementById("rate_num").style.color= "rgb(206,58,58)"
+        document.getElementById("rate_num").innerHTML = "+"+datas['rate'];
+      }
+      else if(datas['rate'] < 0){
+        document.getElementById("rate_num").style.color= "rgb(68,114,196)";
+      }    
+
     }
-
-    // if (localStorage.getItem('user_sps')) {
-    //   let datas = JSON.parse( localStorage.getItem('user_sps') ) 
-    //   if(rank.length < 6){
-    //     ranks.push(datas)
-    //   }
-    // }
-
-
-
-
-
-
-
   </script>
-
 </html>

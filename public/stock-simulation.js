@@ -1834,9 +1834,7 @@ $(document).ready(function() {
 				totalassets += userstock[i].totalpurchase;
 			}	
 			// 총자산 재설정
-			$("#totalassets").text(totalassets);
-			
-			
+			$("#totalassets").text(totalassets);		
 		}
 		
 		if(cnt % 10 == 0 && cnt / 10 <= 39) {
@@ -1863,12 +1861,12 @@ $(document).ready(function() {
 			let user_sp = {
 				name: name,
 				money: money,
-				rate: (money / 10000).toFixed(2),
+				rate: ((money / 10000)-100).toFixed(2),
 			}
-			localStorage.setItem('user_sps',user_sp);
-			// location.href='dashboard.html';
+			localStorage.setItem('user_sps',JSON.stringify( user_sp ));
+			location.href='dashboard.html';
 		}
-	}, 10);
+	}, 175);
 });
 
 // stock-table 행 클릭시
