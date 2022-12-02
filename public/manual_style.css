@@ -5,10 +5,11 @@
 }
 
 body{
+  background-color: rgb(230,255,255);
+  text-align: center;
+
   width: 1280px;
   height: 720px;
-  background-image: url('manual.PNG');
-  background-repeat: no-repeat;
-  background-size: 100%;
+
   margin: auto;
 }
