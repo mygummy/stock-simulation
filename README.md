@@ -6,7 +6,7 @@ ossp final project
 **Youtube link:** 여기에 쓸 것
 
 **How to install**
-1. public 파일 다운로드
+1. docs 파일 다운로드
 2. index.html 실행 전 다음 2개의 명령어를 쳐야 함
 
 npm install jquery --save
@@ -14,7 +14,7 @@ npm install jquery --save
 npm install apexcharts --save
 
 **How to play:**
-1. public 파일 안에 있는 index.html 실행
+1. docs 파일 안에 있는 index.html 실행
 2. '게임 방법' 버튼을 클릭해서 게임 방법을 익힌 뒤 '이전으로' 버튼을 눌러서 이전 화면으로 돌아온다.
 3. 자신의 이름을 작성한 후 '시작!' 버튼을 누른다.
 4. 제한 시간 동안 주식을 매매하여 총자산을 늘리자!
