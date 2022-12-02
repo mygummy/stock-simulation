@@ -1864,7 +1864,7 @@ $(document).ready(function() {
 			localStorage.setItem('user_sps',JSON.stringify( user_sp ));
 			location.href='dashboard.html';
 		}
-	}, 150);
+	}, 175);
 });
 
 // stock-table 행 클릭시
